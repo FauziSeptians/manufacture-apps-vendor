@@ -33,9 +33,28 @@ export default function NavbarComponent({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // --- LOGIKA REDIRECT WHATSAPP ---
+  // 1. Lock scroll body
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
+  // 2. Handle scroll logic
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleWhatsAppRedirect = () => {
-    // Membersihkan karakter non-angka dan mengubah awalan 0 menjadi 62
     const cleanNumber = contactPerson.replace(/\D/g, '').replace(/^0/, '62');
     const url = `https://wa.me/${cleanNumber}`;
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -66,28 +85,25 @@ export default function NavbarComponent({
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <nav
       className={cn(
         'fixed top-0 right-0 left-0 z-50 px-6 py-4 transition-all duration-300',
-        isScrolled
-          ? 'border-b border-slate-800 bg-slate-950/80 py-3 backdrop-blur-md'
-          : 'bg-transparent'
+        // PERBAIKAN DI SINI:
+        // Jika menu mobile terbuka, paksa background jadi solid slate-950
+        // Jika tertutup, baru gunakan logika scroll (transparent -> slate-950/80)
+        mobileMenuOpen
+          ? 'bg-slate-950'
+          : isScrolled
+            ? 'border-b border-slate-800 bg-slate-950/80 py-3 backdrop-blur-md'
+            : 'bg-transparent'
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Link
           href="/"
           onClick={(e) => handleScrollTo(e, '#home')}
-          className="group flex items-center gap-3"
+          className="group relative z-50 flex items-center gap-3"
         >
           <Logo />
           <div className="flex flex-col leading-tight">
@@ -100,6 +116,7 @@ export default function NavbarComponent({
           </div>
         </Link>
 
+        {/* Desktop Menu */}
         <div className="hidden items-center gap-8 md:flex">
           {menus.map((menu) => (
             <Link
@@ -115,7 +132,6 @@ export default function NavbarComponent({
         </div>
 
         <div className="flex items-center gap-4">
-          {/* Tombol Desktop */}
           <Button
             onClick={handleWhatsAppRedirect}
             className="hidden rounded-full border-none bg-amber-500 px-6 text-white transition-colors hover:bg-amber-600 md:flex"
@@ -123,10 +139,11 @@ export default function NavbarComponent({
             Hubungi Kami
           </Button>
 
+          {/* Toggle Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="text-white hover:bg-slate-800 md:hidden"
+            className="relative z-50 text-white hover:bg-slate-800 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -134,29 +151,36 @@ export default function NavbarComponent({
         </div>
       </div>
 
+      {/* Full Screen Mobile Menu Overlay */}
       <div
         className={cn(
-          'fixed inset-x-0 top-[72px] bottom-0 z-40 flex flex-col gap-6 bg-slate-950 p-6 transition-transform duration-500 md:hidden',
+          // Gunakan h-screen untuk memastikan tinggi penuh layar
+          // Gunakan top-0 agar menutup area navbar sepenuhnya (karena navbar sudah di-handle oleh parent)
+          'fixed inset-0 z-40 flex h-screen w-screen flex-col bg-slate-950 p-6 pt-24 transition-transform duration-500 md:hidden',
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
-        {menus.map((menu) => (
-          <Link
-            key={menu.key}
-            href={menu.route}
-            onClick={(e) => handleScrollTo(e, menu.route)}
-            className="border-b border-slate-900 pb-4 text-xl font-semibold text-slate-200"
+        <div className="flex flex-col">
+          {menus.map((menu) => (
+            <Link
+              key={menu.key}
+              href={menu.route}
+              onClick={(e) => handleScrollTo(e, menu.route)}
+              className="border-b border-slate-900 py-6 text-2xl font-bold text-slate-200 hover:bg-amber-500 active:text-amber-500"
+            >
+              {menu.title}
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-auto pb-10">
+          <Button
+            onClick={handleWhatsAppRedirect}
+            className="w-full bg-amber-500 py-7 text-lg font-bold text-white shadow-lg transition-all active:scale-95"
           >
-            {menu.title}
-          </Link>
-        ))}
-        {/* Tombol Mobile */}
-        <Button
-          onClick={handleWhatsAppRedirect}
-          className="mt-auto w-full bg-amber-500 py-6 text-lg text-white"
-        >
-          <Phone className="mr-2 h-5 w-5" /> Hubungi Kami
-        </Button>
+            <Phone className="mr-2 h-6 w-6" /> Hubungi Kami
+          </Button>
+        </div>
       </div>
     </nav>
   );

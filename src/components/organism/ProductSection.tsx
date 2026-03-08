@@ -1,6 +1,12 @@
 'use client';
 
-import { Dialog } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { product } from '@/data/product';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -16,8 +22,6 @@ import {
   CarouselPrevious,
 } from '../ui/carousel';
 import { Typography } from '../ui/Typography';
-
-// ... import lainnya
 
 export default function ProductSection() {
   const [tab, setTab] = useState('waistbag');
@@ -99,7 +103,7 @@ export default function ProductSection() {
                                   <SafeImage
                                     src={prod.url}
                                     alt={prod.title}
-                                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                                     width={800}
                                     height={1000}
                                   />
@@ -117,6 +121,7 @@ export default function ProductSection() {
                           </CarouselItem>
                         ))}
                       </CarouselContent>
+
                       <div className="mt-12 flex justify-center gap-4">
                         <CarouselPrevious className="relative inset-0 h-12 w-12 translate-y-0 border-slate-200 transition-colors hover:bg-slate-900 hover:text-white" />
                         <CarouselNext className="relative inset-0 h-12 w-12 translate-y-0 border-slate-200 transition-colors hover:bg-slate-900 hover:text-white" />
@@ -147,12 +152,62 @@ export default function ProductSection() {
         </Tabs>
       </div>
 
-      {/* MODAL DETAIL PRODUK (Tetap sama) */}
+      {/* MODAL DETAIL PRODUK */}
+
       <Dialog
         open={!!selectedProduct}
         onOpenChange={() => setSelectedProduct(null)}
       >
-        {/* ... isi dialog ... */}
+        <DialogContent className="w-[90%] !max-w-5xl overflow-hidden rounded-xl border-none p-0 sm:w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Sisi Gambar */}
+
+            <div className="h-80 w-full md:h-[500px]">
+              {selectedProduct && (
+                <SafeImage
+                  src={selectedProduct.url}
+                  alt={selectedProduct.title}
+                  className="h-full w-full object-cover"
+                  width={800}
+                  height={1000}
+                />
+              )}
+            </div>
+
+            {/* Sisi Informasi */}
+
+            <div className="flex flex-col justify-center p-8">
+              <DialogHeader>
+                <span className="mb-2 text-xs font-bold tracking-widest text-amber-500 uppercase">
+                  {selectedProduct?.category} Series
+                </span>
+
+                <DialogTitle className="text-3xl font-bold text-slate-900">
+                  {selectedProduct?.title}
+                </DialogTitle>
+
+                <div className="my-4 h-1 w-12 bg-amber-500" />
+
+                <DialogDescription className="mt-4 text-base leading-relaxed text-slate-600">
+                  {selectedProduct?.description ||
+                    'Produk industrial berkualitas tinggi yang diproduksi dengan standar presisi WARTIWAN Industrial. Menggunakan material pilihan untuk durabilitas maksimal.'}
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="mt-8 flex flex-col gap-3">
+                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
+                  <div className="h-2 w-2 rounded-full bg-green-500" />
+                  Ready Production
+                </div>
+
+                <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
+                  <div className="h-2 w-2 rounded-full bg-blue-500" />
+                  Custom Branding Available
+                </div>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
       </Dialog>
     </section>
   );
