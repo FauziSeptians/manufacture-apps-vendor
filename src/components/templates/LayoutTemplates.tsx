@@ -17,7 +17,7 @@ export default function LayoutTemplates({
 
   return (
     <section className="w-full">
-      <NavbarComponent menus={navigationMenus} contactPerson="" />
+      <NavbarComponent menus={navigationMenus} contactPerson="081220709584" />
       <section>{children}</section>
       <FooterSection />
     </section>

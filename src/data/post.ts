@@ -12,8 +12,7 @@ export const POSTS = [
       'Dalam perjalanannya, brand 3Second pernah menggandeng figur publik populer seperti Raffi Ahmad sebagai brand ambassador, yang kemudian dilanjutkan oleh Al Ghazali, memperkuat citra brand di kalangan anak muda Indonesia. Sementara itu, Greenlight turut menghadirkan daya tarik tersendiri dengan menggandeng Ariel NOAH sebagai wajah dari brand mereka.',
       'Di balik kesuksesan tersebut, tentu terdapat berbagai lika-liku perjalanan kerja sama yang telah dilalui selama bertahun-tahun. Mulai dari tantangan produksi, perubahan tren, hingga tuntutan kualitas yang semakin tinggi, semuanya menjadi bagian dari proses yang membentuk Wartiwan Industri Nusantara menjadi lebih kuat dan profesional.',
     ],
-    image:
-      'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=2070',
+    image: '/assets/news/3second.png',
   },
   {
     id: 2,
@@ -28,8 +27,7 @@ export const POSTS = [
       'Produk yang dihasilkan mencakup ranah B2B maupun reguler, mulai dari backpack dan travel bag dengan kompartemen khusus sepatu, hingga drawstring bag yang dirancang untuk menunjang aktivitas olahraga secara praktis dan fungsional.',
       'Wartiwan Industri Nusantara dipercaya untuk mendukung penyediaan tas bagi berbagai kegiatan besar seperti Kontingen Indonesia pada SEA Games 2025, National Paralympic Committee of Indonesia (NPCI), hingga ajang internasional 53rd FIG Artistic Gymnastics World Championships Jakarta.',
     ],
-    image:
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070',
+    image: '/assets/news/mills.jpeg',
   },
   {
     id: 3,
@@ -44,7 +42,6 @@ export const POSTS = [
       'Wartiwan Industri Nusantara meyakini bahwa kekuatan terbesar perusahaan terletak pada kebersamaan seluruh karyawan. Dalam setiap langkah, perusahaan selalu menjunjung tinggi nilai bahwa karyawan adalah keluarga.',
       'Pandemi telah mengajarkan pentingnya ketahanan, inovasi, serta kerja sama yang solid. Dengan semangat kebersamaan yang terus dijaga, perusahaan berkomitmen untuk terus berkembang dan memberikan kesejahteraan bagi seluruh keluarga besar Wartiwan.',
     ],
-    image:
-      'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070',
+    image: '/assets/news/covid.jpg',
   },
 ];

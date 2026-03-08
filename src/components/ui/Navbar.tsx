@@ -7,7 +7,13 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export const Logo = () => (
-  <svg fill="none" height="32" viewBox="0 0 32 32" width="32" className="text-white">
+  <svg
+    fill="none"
+    height="32"
+    viewBox="0 0 32 32"
+    width="32"
+    className="text-white"
+  >
     <path
       clipRule="evenodd"
       d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
@@ -27,17 +33,25 @@ export default function NavbarComponent({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Fungsi Handling Scroll
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, route: string) => {
-    // Jika route diawali dengan #, kita handle manual
+  // --- LOGIKA REDIRECT WHATSAPP ---
+  const handleWhatsAppRedirect = () => {
+    // Membersihkan karakter non-angka dan mengubah awalan 0 menjadi 62
+    const cleanNumber = contactPerson.replace(/\D/g, '').replace(/^0/, '62');
+    const url = `https://wa.me/${cleanNumber}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    route: string
+  ) => {
     if (route.startsWith('#')) {
       e.preventDefault();
       const targetId = route.replace('#', '');
       const element = document.getElementById(targetId);
 
       if (element) {
-        // Ambil tinggi navbar untuk offset agar tidak tertutup navbar fixed
-        const offset = 80; 
+        const offset = 80;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
         const elementPosition = elementRect - bodyRect;
@@ -48,8 +62,6 @@ export default function NavbarComponent({
           behavior: 'smooth',
         });
       }
-      
-      // Tutup menu mobile jika sedang terbuka
       setMobileMenuOpen(false);
     }
   };
@@ -72,8 +84,11 @@ export default function NavbarComponent({
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        {/* Logo & Brand */}
-        <Link href="/" onClick={(e) => handleScrollTo(e, '#home')} className="group flex items-center gap-3">
+        <Link
+          href="/"
+          onClick={(e) => handleScrollTo(e, '#home')}
+          className="group flex items-center gap-3"
+        >
           <Logo />
           <div className="flex flex-col leading-tight">
             <span className="font-bold tracking-tight text-white uppercase">
@@ -85,7 +100,6 @@ export default function NavbarComponent({
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
           {menus.map((menu) => (
             <Link
@@ -100,9 +114,12 @@ export default function NavbarComponent({
           ))}
         </div>
 
-        {/* Right Action Button */}
         <div className="flex items-center gap-4">
-          <Button className="hidden rounded-full border-none bg-amber-500 px-6 text-white hover:bg-amber-600 transition-colors md:flex">
+          {/* Tombol Desktop */}
+          <Button
+            onClick={handleWhatsAppRedirect}
+            className="hidden rounded-full border-none bg-amber-500 px-6 text-white transition-colors hover:bg-amber-600 md:flex"
+          >
             Hubungi Kami
           </Button>
 
@@ -117,7 +134,6 @@ export default function NavbarComponent({
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={cn(
           'fixed inset-x-0 top-[72px] bottom-0 z-40 flex flex-col gap-6 bg-slate-950 p-6 transition-transform duration-500 md:hidden',
@@ -134,7 +150,11 @@ export default function NavbarComponent({
             {menu.title}
           </Link>
         ))}
-        <Button className="mt-auto w-full bg-amber-500 py-6 text-lg text-white">
+        {/* Tombol Mobile */}
+        <Button
+          onClick={handleWhatsAppRedirect}
+          className="mt-auto w-full bg-amber-500 py-6 text-lg text-white"
+        >
           <Phone className="mr-2 h-5 w-5" /> Hubungi Kami
         </Button>
       </div>
