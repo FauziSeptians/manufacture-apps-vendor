@@ -33,4 +33,5 @@ export const product = {
   Slingbag: [],
   Shoesbag: [],
   totebag: [],
+  pouch: [],
 };
