@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'Custom Backpack Manufacturer Indonesia',
   ],
   verification: {
-    google: 'kode-verifikasi-dari-google-search-console',
+    google: 'SKxQvi2n8LCqW5ZiauIQkF27Ha-OlFPfqWbLyHMSJBg',
   },
   openGraph: {
     type: 'website',
