@@ -3,4 +3,9 @@
   --color-primary-light: #3b82f6;
   --color-primary-dark: #1e40af;
   --color-danger: #dc2626;
+  /* Token baru untuk secondary color */
+  --color-secondary: #c7d6ed;
+  --color-ternary: #f8f9fd;
+  /* Opsional: Jika ingin menambahkan varian seperti primary */
+  --color-secondary-dark: #a5b9da;
 }
