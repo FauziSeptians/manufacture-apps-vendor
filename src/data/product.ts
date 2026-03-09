@@ -88,7 +88,12 @@ export const product = {
   Travelbag: [
     { title: 'travel-bag', url: '/assets/product/travel-bag/travel-bag.jpeg' },
   ],
-  Slingbag: [],
+  Slingbag: [
+    { title: 'sling-bag', url: '/assets/product/sling-bag/sling-bag.jpg' },
+    { title: 'sling-bag', url: '/assets/product/sling-bag/sling-bag2.jpg' },
+    { title: 'sling-bag', url: '/assets/product/sling-bag/sling-bag3.webp' },
+    { title: 'sling-bag', url: '/assets/product/sling-bag/sling-bag4.png' },
+  ],
   Shoesbag: [
     { title: 'shoes-bag-1', url: '/assets/product/shoes-bag/shoes-bag.png' },
     { title: 'shoes-bag-2', url: '/assets/product/shoes-bag/shoes-bag2.webp' },
