@@ -24,19 +24,19 @@ const TEAM_DATA = [
     name: 'Abdul Kamal',
     role: 'Head of SCM',
     image: '/assets/teams/kamal.png',
-    imageClass: 'scale-140 group-hover:!scale-140',
+    imageClass: 'scale-140 group-hover:!scale-150',
   },
   {
     name: 'Dadang',
     role: 'Head of Production',
     image: '/assets/teams/dadang.png',
-    imageClass: 'scale-130 pt-14 group-hover:!scale-140',
+    imageClass: 'scale-130 pt-14 group-hover:!scale-150',
   },
   {
     name: 'Dendra',
     role: 'Head of Product Development',
     image: '/assets/teams/dendra.png',
-    imageClass: 'scale-150 pt-12 group-hover:!scale-140',
+    imageClass: 'scale-130 pt-12 group-hover:!scale-140',
   },
   {
     name: 'Ujang Jumad',
@@ -48,7 +48,7 @@ const TEAM_DATA = [
     name: 'Insan Kamil',
     role: 'Head of Warehouse',
     image: '/assets/teams/kamil.png',
-    imageClass: 'scale-130 pt-2 group-hover:!scale-140',
+    imageClass: 'scale-130 pt-1 pr-4 group-hover:!scale-140',
   },
   {
     name: 'Farid Shiddiq Ramadhan',
