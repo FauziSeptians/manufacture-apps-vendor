@@ -36,7 +36,7 @@ const TEAM_DATA = [
     name: 'Dendra',
     role: 'Head of Product Development',
     image: '/assets/teams/dendra.png',
-    imageClass: 'scale-130 pt-12 group-hover:!scale-140',
+    imageClass: 'pt-8 group-hover:!scale-140',
   },
   {
     name: 'Ujang Jumad',
