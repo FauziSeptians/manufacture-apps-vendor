@@ -48,7 +48,7 @@ const TEAM_DATA = [
     name: 'Insan Kamil',
     role: 'Head of Warehouse',
     image: '/assets/teams/kamil.png',
-    imageClass: 'scale-120 pt-4 group-hover:!scale-140',
+    imageClass: 'scale-130 pt-2 group-hover:!scale-140',
   },
   {
     name: 'Farid Shiddiq Ramadhan',

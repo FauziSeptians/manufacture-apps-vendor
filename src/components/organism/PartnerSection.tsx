@@ -15,6 +15,7 @@ const PARTNERS = [
   { id: 7, name: 'WNRS', logo: '/assets/partner/7.png' },
   { id: 8, name: 'Mills', logo: '/assets/partner/8.png' },
   { id: 9, name: 'Gurls Club', logo: '/assets/partner/9.png' },
+  { id: 10, name: 'Greenlight', logo: '/assets/partner/10.jpg' },
 ];
 
 export default function PartnerSection() {
