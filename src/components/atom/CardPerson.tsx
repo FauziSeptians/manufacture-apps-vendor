@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import Image, { StaticImageData } from 'next/image';
 import { Card, CardContent } from '../ui/card';
 
@@ -18,11 +19,21 @@ export function CardDescription({
   role: string;
 }) {
   return (
-    <div className="pointer-events-none absolute bottom-6 left-0 z-20 w-full translate-y-4 px-6 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+    <div
+      className={cn(
+        'absolute bottom-6 left-0 z-20 w-full px-6 transition-all duration-500 ease-out',
+        // DESKTOP: Sembunyi dulu, muncul pas hover
+        'md:pointer-events-none md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100',
+        // MOBILE: Selalu muncul, tanpa efek gerak/transparan
+        'max-md:pointer-events-auto max-md:translate-y-0 max-md:opacity-100'
+      )}
+    >
       <Card className="rounded-xl border-none bg-white/90 shadow-2xl backdrop-blur-md">
-        <CardContent className="text-center text-sm font-bold text-slate-800">
-          <p className="text-lg font-semibold">{name}</p>
-          <p className="text-sm font-light">{role}</p>
+        <CardContent className="p-4 text-center text-slate-800">
+          {' '}
+          {/* p-4 agar lebih rapi */}
+          <p className="text-lg leading-tight font-bold">{name}</p>
+          <p className="text-sm font-medium text-slate-500">{role}</p>
         </CardContent>
       </Card>
     </div>
