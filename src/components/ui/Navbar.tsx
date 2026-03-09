@@ -95,8 +95,8 @@ export default function NavbarComponent({
         mobileMenuOpen
           ? 'bg-slate-950'
           : isScrolled
-            ? 'border-b border-slate-800 bg-slate-950/80 py-3 backdrop-blur-md'
-            : 'bg-transparent'
+            ? 'border-b border-slate-800 bg-slate-950/60 py-3 backdrop-blur-md'
+            : 'bg-slate-950'
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
