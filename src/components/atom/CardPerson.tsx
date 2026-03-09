@@ -9,6 +9,7 @@ interface CardPersonProps {
   name: string;
   role: string;
   image?: string | StaticImageData; // Opsional jika belum ada foto semua
+  imageClass?: string;
 }
 
 export function CardDescription({
@@ -40,7 +41,12 @@ export function CardDescription({
   );
 }
 
-export default function CardPerson({ name, role, image }: CardPersonProps) {
+export default function CardPerson({
+  name,
+  role,
+  image,
+  imageClass,
+}: CardPersonProps) {
   return (
     <div className="group relative w-full">
       <CardDescription name={name} role={role} />
@@ -52,7 +58,12 @@ export default function CardPerson({ name, role, image }: CardPersonProps) {
               src={image}
               alt={name}
               fill
-              className="object-cover grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
+              className={cn(
+                // Default classes duluan
+                'object-cover object-top grayscale transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0',
+                // Custom classes terakhir supaya menang override
+                imageClass
+              )}
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-slate-300 text-xs text-slate-500 italic">

@@ -1,20 +1,61 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Person from '../../../public/assets/person.png';
 import CardPerson from '../atom/CardPerson';
 import { Typography } from '../ui/Typography';
 
 const TEAM_DATA = [
-  { name: 'Wartiwan', role: 'President Director (CEO)' },
-  { name: 'Aas Saadah', role: 'Head of Finance' },
-  { name: 'Marwan', role: 'Head of Marketing' },
-  { name: 'Abdul Kamal', role: 'Head of SCM' },
-  { name: 'Dadang', role: 'Head of Production' },
-  { name: 'Dendra', role: 'Head of Product Development' },
-  { name: 'Ujang Jumad', role: 'Head of Quality Control' },
-  { name: 'Insan Kamil', role: 'Head of Warehouse' },
-  { name: 'Farid Shiddiq Ramadhan', role: 'Head of Social Media' },
+  {
+    name: 'Wartiwan',
+    role: 'President Director (CEO)',
+    image: '/assets/teams/wartiwan.png',
+  },
+  {
+    name: 'Aas Saadah',
+    role: 'Head of Finance',
+    image: '/assets/teams/wartiwan.png',
+  },
+  {
+    name: 'Marwan',
+    role: 'Head of Marketing',
+    image: '/assets/teams/wartiwan.png',
+  },
+  {
+    name: 'Abdul Kamal',
+    role: 'Head of SCM',
+    image: '/assets/teams/kamal.png',
+    imageClass: 'scale-140 group-hover:!scale-140',
+  },
+  {
+    name: 'Dadang',
+    role: 'Head of Production',
+    image: '/assets/teams/dadang.png',
+    imageClass: 'scale-130 pt-14 group-hover:!scale-140',
+  },
+  {
+    name: 'Dendra',
+    role: 'Head of Product Development',
+    image: '/assets/teams/dendra.png',
+    imageClass: 'scale-150 pt-12 group-hover:!scale-140',
+  },
+  {
+    name: 'Ujang Jumad',
+    role: 'Head of Quality Control',
+    image: '/assets/teams/ahmad.png',
+    imageClass: 'scale-120 pt-10 pl-5 group-hover:!scale-140',
+  },
+  {
+    name: 'Insan Kamil',
+    role: 'Head of Warehouse',
+    image: '/assets/teams/kamil.png',
+    imageClass: 'scale-120 pt-4 group-hover:!scale-140',
+  },
+  {
+    name: 'Farid Shiddiq Ramadhan',
+    role: 'Head of Social Media',
+    image: '/assets/teams/farid.png',
+    imageClass: 'scale-140 pt-12 group-hover:!scale-140',
+  },
 ];
 
 export default function OurTeamSection() {
@@ -59,7 +100,8 @@ export default function OurTeamSection() {
               <CardPerson
                 name={member.name}
                 role={member.role}
-                image={Person.src}
+                image={member.image}
+                imageClass={member.imageClass}
               />
             </motion.div>
           ))}
