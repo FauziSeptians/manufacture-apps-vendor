@@ -13,12 +13,14 @@ const TEAM_DATA = [
   {
     name: 'Aas Saadah',
     role: 'Head of Finance',
-    image: '/assets/teams/wartiwan.png',
+    image: '/assets/teams/ibu.png',
+    imageClass: '!object-cover !object-[50%_20%] mt-8',
   },
   {
     name: 'Marwan',
     role: 'Head of Marketing',
-    image: '/assets/teams/wartiwan.png',
+    image: '/assets/teams/marwan.png',
+    imageClass: '!object-center scale-[90%] mt-8 group-hover:!scale-[100%]',
   },
   {
     name: 'Abdul Kamal',
