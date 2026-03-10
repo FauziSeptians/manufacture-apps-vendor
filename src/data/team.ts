@@ -35,7 +35,7 @@ export const TEAM_DATA = [
     imageClass: 'scale-120 pt-6 group-hover:!scale-130',
   },
   {
-    name: 'Ujang Jumad',
+    name: 'Ahmad',
     role: 'Head of Quality Control',
     image: '/assets/teams/ahmad.png',
     imageClass: 'scale-120 pt-10 pl-5 group-hover:!scale-140',
