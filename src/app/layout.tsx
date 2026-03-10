@@ -1,9 +1,12 @@
+import DictionaryProvider from '@/components/providers/DictionaryProvider';
 import ReactQueryProvider from '@/components/providers/ReactQueryProvider';
 import LayoutTemplates from '@/components/templates/LayoutTemplates';
+import { getDictionary, Locale } from '@/lib/dictionary';
 import '@/styles/globals.css';
 import { classNames } from '@/utils/classNames';
 import { HeroUIProvider } from '@heroui/system';
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wartiwan-industri.vercel.app'),
@@ -41,17 +44,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const locale = (cookieStore.get('NEXT_LOCALE')?.value || 'id') as Locale;
+
+  const dict = await getDictionary(locale);
+
   return (
     <html lang="en">
       <body className={classNames('antialiased', 'font-custom')}>
         <HeroUIProvider>
           <ReactQueryProvider>
-            <LayoutTemplates>{children}</LayoutTemplates>
+            <DictionaryProvider>
+              <LayoutTemplates>{children}</LayoutTemplates>
+            </DictionaryProvider>
           </ReactQueryProvider>
         </HeroUIProvider>
       </body>

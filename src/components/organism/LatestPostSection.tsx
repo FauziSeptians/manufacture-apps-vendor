@@ -1,5 +1,6 @@
 'use client';
 
+import { useDict } from '@/components/providers/DictionaryProvider';
 import {
   Card,
   CardContent,
@@ -7,7 +8,7 @@ import {
   CardHeader,
 } from '@/components/ui/card';
 import { POSTS } from '@/data/post';
-import { AnimatePresence, motion } from 'framer-motion'; // Tambah ini
+import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -25,6 +26,7 @@ import {
 const POSTS_PER_PAGE = 2;
 
 export default function LatestPostSection() {
+  const dict = useDict(); // Ambil data dictionary
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(POSTS.length / POSTS_PER_PAGE);
@@ -44,30 +46,30 @@ export default function LatestPostSection() {
         >
           <Typography>
             <Typography.Kicker className="tracking-widest text-amber-500 uppercase">
-              Latest Insights
+              {dict.News.kicker}
             </Typography.Kicker>
             <Typography.Title className="text-4xl text-slate-900 md:text-5xl">
-              Our Latest{' '}
+              {dict.News.title}{' '}
               <Typography.Highlight className="text-amber-500">
-                Post
+                {dict.News.titleHighlight}
               </Typography.Highlight>
             </Typography.Title>
           </Typography>
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 96 }} // 24rem -> 96px
+            whileInView={{ width: 96 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
             className="mt-6 h-1 rounded-full bg-slate-200"
           />
         </motion.div>
 
-        {/* Grid Container dengan AnimatePresence untuk Pagination */}
+        {/* Grid Container */}
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2">
           <AnimatePresence mode="wait">
             {currentPosts.map((post, idx) => (
               <motion.div
-                key={post.id}
+                key={`${post.id}-${currentPage}`} // Key unik agar animasi trigger saat ganti page
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -105,7 +107,7 @@ export default function LatestPostSection() {
 
                     <CardFooter className="mt-auto p-8 pt-6">
                       <div className="flex items-center font-bold tracking-tighter text-amber-600 uppercase transition-all group-hover:translate-x-2">
-                        Read Full Story{' '}
+                        {dict.News.readMore}{' '}
                         <ArrowRight size={16} className="ml-2" />
                       </div>
                     </CardFooter>
@@ -116,7 +118,7 @@ export default function LatestPostSection() {
           </AnimatePresence>
         </div>
 
-        {/* Pagination dengan Motion */}
+        {/* Pagination */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -131,7 +133,7 @@ export default function LatestPostSection() {
                   className={
                     currentPage === 1
                       ? 'pointer-events-none opacity-50'
-                      : 'cursor-pointer'
+                      : 'cursor-pointer select-none'
                   }
                 />
               </PaginationItem>
@@ -140,7 +142,7 @@ export default function LatestPostSection() {
                   <PaginationLink
                     isActive={currentPage === i + 1}
                     onClick={() => setCurrentPage(i + 1)}
-                    className="cursor-pointer"
+                    className="cursor-pointer select-none"
                   >
                     {i + 1}
                   </PaginationLink>
@@ -154,7 +156,7 @@ export default function LatestPostSection() {
                   className={
                     currentPage === totalPages
                       ? 'pointer-events-none opacity-50'
-                      : 'cursor-pointer'
+                      : 'cursor-pointer select-none'
                   }
                 />
               </PaginationItem>

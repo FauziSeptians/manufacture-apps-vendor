@@ -1,9 +1,11 @@
 'use client';
 
+import { useDict } from '@/components/providers/DictionaryProvider'; // Import hook
 import { Copyright, Instagram, Linkedin, Music2, Phone } from 'lucide-react';
-import { Typography } from '../ui/Typography'; // Pastikan path benar
+import { Typography } from '../ui/Typography';
 
 export default function FooterSection() {
+  const dict = useDict();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -20,9 +22,7 @@ export default function FooterSection() {
                 </Typography.Highlight>
               </Typography.Title>
               <Typography.P className="max-w-xs text-sm leading-relaxed text-slate-400">
-                Menghadirkan solusi manufaktur berkualitas tinggi untuk
-                mendukung kemajuan infrastruktur global melalui inovasi
-                berkelanjutan.
+                {dict.Footer.description}
               </Typography.P>
             </Typography>
           </div>
@@ -30,7 +30,7 @@ export default function FooterSection() {
           {/* Contact Section */}
           <div className="flex flex-col gap-6">
             <Typography.Kicker className="tracking-[0.2em] text-white">
-              Hubungi Kami
+              {dict.Footer.contactTitle}
             </Typography.Kicker>
             <ul className="space-y-4">
               <li>
@@ -61,7 +61,7 @@ export default function FooterSection() {
           {/* Social Media Section */}
           <div className="flex flex-col gap-6">
             <Typography.Kicker className="tracking-[0.2em] text-white">
-              Media Sosial
+              {dict.Footer.socialTitle}
             </Typography.Kicker>
             <div className="flex gap-4">
               {[
@@ -101,7 +101,7 @@ export default function FooterSection() {
             </span>
           </div>
           <div className="text-[10px] font-bold tracking-[0.3em] text-amber-500/80 uppercase">
-            Industrial Excellence & Distribution
+            {dict.Footer.tagline}
           </div>
         </div>
       </div>

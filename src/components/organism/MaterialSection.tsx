@@ -1,27 +1,21 @@
 'use client';
 
+import { useDict } from '@/components/providers/DictionaryProvider';
+import { MATERIALS } from '@/data/materials';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import ImageOptimize from '../atom/ImageOptimize';
 import { Card, CardContent } from '../ui/card';
 import { Typography } from '../ui/Typography';
 
-const MATERIALS = [
-  { title: 'Cordura 1000D', src: '/assets/material/cordura-100d.jpg' },
-  { title: 'Nylon 750D', src: '/assets/material/nylon.jpg' },
-  { title: 'Cordura 600D', src: '/assets/material/cordura-600d.jpg' },
-  { title: 'Furing Torin Urex', src: '/assets/material/furing-torin.jpg' },
-  { title: 'Kepala YKK', src: '/assets/material/kepala-ykk.jpg' },
-  { title: 'Resleting ykk', src: '/assets/material/reseleting-ykk.jpg' },
-];
-
 export default function MaterialSection() {
+  const dict = useDict();
   const [indices, setIndices] = useState([0, 1, 2, 3]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndices((prev) => prev.map((idx) => (idx + 1) % MATERIALS.length));
-    }, 4000); // Sedikit lebih lambat agar transisi lebih elegan
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -48,22 +42,23 @@ export default function MaterialSection() {
                 className="h-[1.5px] bg-amber-500"
               />
               <Typography.Kicker className="text-amber-500">
-                Premium Selection
+                {dict.Material.kicker}
               </Typography.Kicker>
             </div>
             <Typography.Title className="text-3xl sm:text-4xl md:text-5xl">
-              BEST MATERIAL <br />
-              <Typography.Highlight>FOR OUR CLIENT.</Typography.Highlight>
+              {dict.Material.title} <br />
+              <Typography.Highlight>
+                {dict.Material.titleHighlight}
+              </Typography.Highlight>
             </Typography.Title>
             <Typography.P className="text-base leading-relaxed text-slate-500 italic">
-              Kami mengkurasi material teknis terbaik untuk memastikan setiap
-              produk memiliki daya tahan lintas generasi.
+              {dict.Material.description}
             </Typography.P>
           </Typography>
         </div>
       </motion.div>
 
-      {/* SISI KANAN: 4 GRID CAROUSEL dengan Staggered Reveal */}
+      {/* SISI KANAN: Grid Carousel */}
       <div className="flex w-full items-center justify-center p-6 lg:w-1/2 lg:p-12">
         <div className="grid w-full max-w-2xl grid-cols-2 gap-4">
           {indices.map((materialIdx, gridIdx) => (
@@ -74,7 +69,7 @@ export default function MaterialSection() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.6,
-                delay: gridIdx * 0.15, // Efek muncul satu per satu (stagger)
+                delay: gridIdx * 0.15,
                 ease: 'easeOut',
               }}
             >
@@ -82,7 +77,7 @@ export default function MaterialSection() {
                 <CardContent className="h-full w-full !p-0">
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={materialIdx} // Memicu re-animasi saat index berubah
+                      key={materialIdx}
                       initial={{ opacity: 0, filter: 'blur(10px)' }}
                       animate={{ opacity: 1, filter: 'blur(0px)' }}
                       exit={{ opacity: 0, filter: 'blur(10px)' }}
@@ -110,7 +105,6 @@ export default function MaterialSection() {
                     </motion.span>
                   </div>
 
-                  {/* Pulsing Indicator */}
                   <div className="absolute top-4 right-4 h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
                   </div>

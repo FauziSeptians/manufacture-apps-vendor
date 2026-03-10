@@ -1,0 +1,100 @@
+{
+  "Hero": {
+    "kicker": "Industrial Excellence",
+    "title1": "Wartiwan",
+    "title2": "Industri Nusantara.",
+    "description": "Mitra manufaktur tas strategis yang mengintegrasikan pengalaman dua dekade dengan sistem produksi modern.",
+    "scroll": "Gulir"
+  },
+  "Stats": {
+    "trackRecord": "Proven",
+    "trackRecordHighlight": "Track Record",
+    "items": {
+      "est": "Tahun Berdiri",
+      "output": "Output Bulanan",
+      "artisans": "Pengrajin Ahli",
+      "supply": "Rantai Pasok"
+    }
+  },
+  "CoreValues": [
+    "Manufaktur Desain Kustom",
+    "Material Standar Militer",
+    "Produksi Ramah Lingkungan",
+    "Jahitan Presisi Tinggi",
+    "Rantai Pasok Internasional",
+    "Pengalaman 20+ Tahun",
+    "Standar Kualitas Global",
+    "Sumber Berkelanjutan",
+    "Produksi Kapasitas Tinggi",
+    "Teknologi Tekstil Canggih"
+  ],
+  "VisionMission": {
+    "kicker": "Aspirasi",
+    "title": "Visi &",
+    "titleHighlight": "Misi Kami",
+    "scrollHint": "Gulir untuk menjelajah",
+    "vision": {
+      "title": "Visi",
+      "highlight": "Menjadi Mitra Manufaktur Global",
+      "description": "Menjadi manufaktur tas terpercaya yang menghadirkan kualitas unggul, inovasi berkelanjutan, serta sistem produksi efisien untuk mendukung pertumbuhan brand klien di pasar internasional secara konsisten."
+    },
+    "mission": {
+      "title": "Misi",
+      "highlight": "Inovasi & Kualitas Konsisten",
+      "description": "Berkomitmen pada pemberdayaan pengrajin lokal, penggunaan teknologi modern, dan standar kontrol kualitas yang ketat guna memastikan setiap produk memiliki nilai daya saing tinggi dan layanan yang kompetitif."
+    }
+  },
+  "Product": {
+    "kicker": "Katalog Premium Kami",
+    "title": "KERAJINAN",
+    "titleHighlight": "INDUSTRI.",
+    "noDataTitle": "Katalog Belum Tersedia",
+    "noDataDesc": "Maaf, produk untuk kategori {category} sedang dalam proses pembaruan data.",
+    "modal": {
+      "defaultDesc": "Produk industrial berkualitas tinggi yang diproduksi dengan standar presisi WARTIWAN Industrial.",
+      "readyStatus": "Siap Produksi",
+      "customStatus": "Tersedia Branding Kustom"
+    }
+  },
+  "Material": {
+    "kicker": "Seleksi Premium",
+    "title": "MATERIAL TERBAIK",
+    "titleHighlight": "UNTUK KLIEN KAMI.",
+    "description": "Kami mengkurasi material teknis terbaik untuk memastikan setiap produk memiliki daya tahan lintas generasi."
+  },
+  "Team": {
+    "kicker": "Keahlian di Balik Wartiwan",
+    "title": "Tulang Punggung",
+    "titleHighlight": "Utama Kami.",
+    "description": "Didukung oleh para profesional berpengalaman yang memastikan setiap aspek produksi dan distribusi berjalan dengan standar kualitas tertinggi."
+  },
+  "Partner": {
+    "kicker": "Jaringan Terpercaya",
+    "title": "Partner",
+    "titleHighlight": "Strategis Kami.",
+    "description": "Kami berkolaborasi dengan perusahaan teknologi terkemuka untuk menghadirkan solusi manufaktur terbaik bagi pasar global."
+  },
+  "Footer": {
+    "description": "Menghadirkan solusi manufaktur berkualitas tinggi untuk mendukung kemajuan infrastruktur global melalui inovasi berkelanjutan.",
+    "contactTitle": "Hubungi Kami",
+    "socialTitle": "Media Sosial",
+    "tagline": "Ekselensi Industri & Distribusi"
+  },
+  "Navbar": {
+    "cta": "Hubungi Kami",
+    "menu": {
+      "vision": "Visi & Misi",
+      "product": "Produk",
+      "materials": "Bahan Baku",
+      "team": "Tim Kami",
+      "partner": "Partner",
+      "news": "Berita"
+    }
+  },
+  "News": {
+    "kicker": "Wawasan Terbaru",
+    "title": "Postingan",
+    "titleHighlight": "Terbaru Kami",
+    "readMore": "Baca Selengkapnya"
+  }
+}

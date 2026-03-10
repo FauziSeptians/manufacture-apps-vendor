@@ -1,0 +1,100 @@
+{
+  "Hero": {
+    "kicker": "Industrial Excellence",
+    "title1": "Wartiwan",
+    "title2": "Nusantara Industry.",
+    "description": "A strategic bag manufacturing partner integrating two decades of experience with modern production systems.",
+    "scroll": "Scroll"
+  },
+  "Stats": {
+    "trackRecord": "Proven",
+    "trackRecordHighlight": "Track Record",
+    "items": {
+      "est": "Est. Year",
+      "output": "Monthly Output",
+      "artisans": "Skilled Artisans",
+      "supply": "Global Supply Chain"
+    }
+  },
+  "CoreValues": [
+    "Custom Design Manufacturing",
+    "Military Grade Materials",
+    "Eco-Friendly Production",
+    "High-Precision Stitching",
+    "International Supply Chain",
+    "20+ Years Experience",
+    "Global Quality Standard",
+    "Sustainable Sourcing",
+    "High-Capacity Production",
+    "Advanced Textile Tech"
+  ],
+  "VisionMission": {
+    "kicker": "Aspiration",
+    "title": "Our Vision &",
+    "titleHighlight": "Mission",
+    "scrollHint": "Scroll to explore",
+    "vision": {
+      "title": "Vision",
+      "highlight": "Become a Global Manufacturing Partner",
+      "description": "To be a trusted bag manufacturer delivering superior quality, sustainable innovation, and efficient production systems to consistently support client brand growth in international markets."
+    },
+    "mission": {
+      "title": "Mission",
+      "highlight": "Innovation & Consistent Quality",
+      "description": "Committed to empowering local artisans, utilizing modern technology, and strict quality control standards to ensure every product has high competitive value and services."
+    }
+  },
+  "Product": {
+    "kicker": "Our Premium Catalog",
+    "title": "INDUSTRIAL",
+    "titleHighlight": "CRAFTSMANSHIP.",
+    "noDataTitle": "Catalog Not Available",
+    "noDataDesc": "Sorry, products for the {category} category are currently being updated.",
+    "modal": {
+      "defaultDesc": "High-quality industrial products manufactured with WARTIWAN Industrial precision standards.",
+      "readyStatus": "Ready for Production",
+      "customStatus": "Custom Branding Available"
+    }
+  },
+  "Material": {
+    "kicker": "Premium Selection",
+    "title": "BEST MATERIAL",
+    "titleHighlight": "FOR OUR CLIENT.",
+    "description": "We curate the finest technical materials to ensure every product possesses cross-generational durability."
+  },
+  "Team": {
+    "kicker": "Expertise Behind Wartiwan",
+    "title": "The Solid",
+    "titleHighlight": "Backbone.",
+    "description": "Supported by experienced professionals who ensure every aspect of production and distribution runs with the highest quality standards."
+  },
+  "Partner": {
+    "kicker": "Trusted Network",
+    "title": "Our Strategic",
+    "titleHighlight": "Partners.",
+    "description": "We collaborate with leading technology companies to deliver the best manufacturing solutions for the global market."
+  },
+  "Footer": {
+    "description": "Delivering high-quality manufacturing solutions to support global infrastructure advancement through sustainable innovation.",
+    "contactTitle": "Contact Us",
+    "socialTitle": "Social Media",
+    "tagline": "Industrial Excellence & Distribution"
+  },
+  "Navbar": {
+    "cta": "Contact Us",
+    "menu": {
+      "vision": "Vision & Mission",
+      "product": "Products",
+      "materials": "Materials",
+      "team": "Our Team",
+      "partner": "Partners",
+      "news": "News"
+    }
+  },
+  "News": {
+    "kicker": "Latest Insights",
+    "title": "Our Latest",
+    "titleHighlight": "Post",
+    "readMore": "Read Full Story"
+  }
+}

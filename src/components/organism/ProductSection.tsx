@@ -1,5 +1,6 @@
 'use client';
 
+import { useDict } from '@/components/providers/DictionaryProvider';
 import {
   Dialog,
   DialogContent,
@@ -10,7 +11,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { product } from '@/data/product';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PackageOpen } from 'lucide-react'; // Icon untuk No Data
+import { PackageOpen } from 'lucide-react';
 import { useState } from 'react';
 import SafeImage from '../atom/ImageOptimize';
 import { Card, CardContent } from '../ui/card';
@@ -24,6 +25,11 @@ import {
 import { Typography } from '../ui/Typography';
 
 export default function ProductSection() {
+  const dict = useDict();
+  // Asumsi locale disimpan di cookie atau bisa diambil via logic sederhana
+  // Jika kamu simpan locale di cookie "NEXT_LOCALE", panggil logic pengambilannya di sini
+  const locale = 'id'; // Contoh sederhana, sesuaikan dengan logic cookie kamu
+
   const [tab, setTab] = useState('waistbag');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -42,11 +48,13 @@ export default function ProductSection() {
       >
         <Typography>
           <Typography.Kicker className="text-amber-500">
-            Our Premium Catalog
+            {dict.Product.kicker}
           </Typography.Kicker>
           <Typography.Title className="text-4xl md:text-5xl">
-            INDUSTRIAL{' '}
-            <Typography.Highlight>CRAFTSMANSHIP.</Typography.Highlight>
+            {dict.Product.title}{' '}
+            <Typography.Highlight>
+              {dict.Product.titleHighlight}
+            </Typography.Highlight>
           </Typography.Title>
         </Typography>
       </motion.div>
@@ -57,7 +65,6 @@ export default function ProductSection() {
           value={tab}
           onValueChange={setTab}
         >
-          {/* TabsList Responsif (Horizontal Scroll di Mobile) */}
           <TabsList className="no-scrollbar flex !h-12 w-full max-w-6xl items-center justify-start overflow-x-auto overflow-y-hidden rounded-full border border-slate-200 bg-slate-100/50 p-1 md:justify-center">
             {Object.keys(product).map((key) => (
               <TabsTrigger
@@ -82,7 +89,6 @@ export default function ProductSection() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
                 >
                   {items.length > 0 ? (
                     <Carousel opts={{ align: 'start' }} className="w-full">
@@ -121,27 +127,24 @@ export default function ProductSection() {
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-
                       <div className="mt-12 flex justify-center gap-4">
-                        <CarouselPrevious className="relative inset-0 h-12 w-12 translate-y-0 border-slate-200 transition-colors hover:bg-slate-900 hover:text-white" />
-                        <CarouselNext className="relative inset-0 h-12 w-12 translate-y-0 border-slate-200 transition-colors hover:bg-slate-900 hover:text-white" />
+                        <CarouselPrevious className="relative inset-0 h-12 w-12 translate-y-0 border-slate-200" />
+                        <CarouselNext className="relative inset-0 h-12 w-12 translate-y-0 border-slate-200" />
                       </div>
                     </Carousel>
                   ) : (
-                    /* STATE: NO DATA */
                     <div className="flex min-h-[400px] w-full flex-col items-center justify-center">
                       <div className="rounded-full bg-white p-4 shadow-sm">
                         <PackageOpen className="h-10 w-10 text-slate-300" />
                       </div>
                       <h3 className="mt-4 text-xl font-semibold text-slate-900">
-                        Katalog Belum Tersedia
+                        {dict.Product.noDataTitle}
                       </h3>
-                      <p className="mt-2 max-w-xs text-sm text-slate-500">
-                        Maaf, produk untuk kategori{' '}
-                        <span className="font-bold text-amber-500 capitalize">
-                          {category}
-                        </span>{' '}
-                        sedang dalam proses pembaruan data.
+                      <p className="mt-2 max-w-xs text-center text-sm text-slate-500">
+                        {dict.Product.noDataDesc.replace(
+                          '{category}',
+                          category
+                        )}
                       </p>
                     </div>
                   )}
@@ -153,56 +156,45 @@ export default function ProductSection() {
       </div>
 
       {/* MODAL DETAIL PRODUK */}
-
       <Dialog
         open={!!selectedProduct}
         onOpenChange={() => setSelectedProduct(null)}
       >
         <DialogContent className="w-[90%] !max-w-5xl overflow-hidden rounded-xl border-none p-0 sm:w-full">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Sisi Gambar */}
-
             <div className="h-80 w-full md:h-[500px]">
               {selectedProduct && (
                 <SafeImage
                   src={selectedProduct.url}
-                  alt={selectedProduct.title}
+                  alt={selectedProduct.title[locale]}
                   className="h-full w-full object-cover"
                   width={800}
                   height={1000}
                 />
               )}
             </div>
-
-            {/* Sisi Informasi */}
-
             <div className="flex flex-col justify-center p-8">
               <DialogHeader>
                 <span className="mb-2 text-xs font-bold tracking-widest text-amber-500 uppercase">
                   {selectedProduct?.category} Series
                 </span>
-
                 <DialogTitle className="text-3xl font-bold text-slate-900">
-                  {selectedProduct?.title}
+                  {selectedProduct?.title[locale]}
                 </DialogTitle>
-
                 <div className="my-4 h-1 w-12 bg-amber-500" />
-
                 <DialogDescription className="mt-4 text-base leading-relaxed text-slate-600">
-                  {selectedProduct?.description ||
-                    'Produk industrial berkualitas tinggi yang diproduksi dengan standar presisi WARTIWAN Industrial. Menggunakan material pilihan untuk durabilitas maksimal.'}
+                  {selectedProduct?.description?.[locale] ||
+                    dict.Product.modal.defaultDesc}
                 </DialogDescription>
               </DialogHeader>
-
               <div className="mt-8 flex flex-col gap-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
                   <div className="h-2 w-2 rounded-full bg-green-500" />
-                  Ready Production
+                  {dict.Product.modal.readyStatus}
                 </div>
-
                 <div className="flex items-center gap-3 text-sm font-medium text-slate-700">
                   <div className="h-2 w-2 rounded-full bg-blue-500" />
-                  Custom Branding Available
+                  {dict.Product.modal.customStatus}
                 </div>
               </div>
             </div>

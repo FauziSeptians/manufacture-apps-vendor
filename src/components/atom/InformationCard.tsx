@@ -17,8 +17,8 @@ export default function InformationCard({
   icon: Icon,
 }: InformationCardProps) {
   return (
-    <Card className="group relative overflow-hidden rounded-xl border border-white/20 bg-white/10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:bg-white/20">
-      <CardHeader className="flex hidden flex-col items-center gap-4 space-y-0 p-8 pb-4 md:flex">
+    <Card className="group relative h-full overflow-hidden rounded-xl border border-white/20 bg-white/10 shadow-2xl backdrop-blur-md transition-all duration-300 hover:bg-white/20">
+      <CardHeader className="hidden flex-col items-center gap-4 space-y-0 p-8 pb-4 md:flex">
         {/* Icon di tengah */}
         <div className="hidden h-16 w-16 items-center justify-center rounded-full bg-amber-500 text-white shadow-lg transition-transform group-hover:scale-110 md:flex">
           <Icon size={32} />
@@ -29,7 +29,7 @@ export default function InformationCard({
         </h3>
       </CardHeader>
 
-      <CardContent className="flex flex-col items-center space-y-4 p-8 pt-0 text-center">
+      <CardContent className="flex h-full flex-col items-center space-y-4 p-8 pt-0 text-center">
         {/* Highlight di tengah */}
         <p className="text-sm font-bold tracking-widest text-amber-400 uppercase">
           {highlight}

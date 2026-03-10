@@ -1,3 +1,6 @@
+'use client';
+
+import { useDict } from '@/components/providers/DictionaryProvider';
 import FooterSection from '../organism/FooterSection';
 import NavbarComponent from '../ui/Navbar';
 
@@ -6,13 +9,19 @@ export default function LayoutTemplates({
 }: {
   children: React.ReactNode;
 }) {
+  const dict = useDict();
+
   const navigationMenus = [
-    { key: 'visi-misi', title: 'Visi & Misi', route: '#vission' },
-    { key: 'product', title: 'Product', route: '#product' },
-    { key: 'materials', title: 'Bahan Baku', route: '#materials' },
-    { key: 'team', title: 'Tim Kami', route: '#team' },
-    { key: 'partner', title: 'Partner', route: '#partner' },
-    { key: 'news', title: 'News', route: '#news' },
+    { key: 'visi-misi', title: dict.Navbar.menu.vision, route: '#vission' },
+    { key: 'product', title: dict.Navbar.menu.product, route: '#product' },
+    {
+      key: 'materials',
+      title: dict.Navbar.menu.materials,
+      route: '#materials',
+    },
+    { key: 'team', title: dict.Navbar.menu.team, route: '#team' },
+    { key: 'partner', title: dict.Navbar.menu.partner, route: '#partner' },
+    { key: 'news', title: dict.Navbar.menu.news, route: '#news' },
   ];
 
   return (
