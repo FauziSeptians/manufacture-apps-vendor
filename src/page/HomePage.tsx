@@ -1,3 +1,4 @@
+import ContactFormSection from '@/components/organism/ContactFormSection';
 import CoreValueSection from '@/components/organism/CoreValueSection';
 import HeroSection from '@/components/organism/HeroSection';
 import LatestPostSection from '@/components/organism/LatestPostSection';
@@ -18,6 +19,7 @@ export default function HomePage() {
       <OurTeamSection />
       <PartnerSection />
       <LatestPostSection />
+      <ContactFormSection />
     </section>
   );
 }

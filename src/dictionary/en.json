@@ -96,5 +96,32 @@
     "title": "Our Latest",
     "titleHighlight": "Post",
     "readMore": "Read Full Story"
+  },
+  "Contact": {
+    "kicker": "GET IN TOUCH",
+    "title": "Establish Strategic",
+    "highlight": "Partnership Now.",
+    "description": "Our expert team is ready to assist with technical inquiries or discuss your business partnership plans.",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "e.g., John Doe",
+      "companyLabel": "Company",
+      "companyPlaceholder": "Company Name Ltd.",
+      "emailLabel": "Business Email",
+      "emailPlaceholder": "name@company.com",
+      "messageLabel": "Message / Cooperation Plan",
+      "messagePlaceholder": "Write down your product specifications or business proposal...",
+      "button": "SEND INQUIRY",
+      "submitting": "SENDING..."
+    },
+    "validation": {
+      "nameMin": "Name must be at least 3 characters",
+      "companyRequired": "Company name is required",
+      "emailInvalid": "Invalid email format",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "successTitle": "MESSAGE SENT!",
+    "success": "Thank you! We have received your message. Our team will contact you via email within 1x24 hours.",
+    "closeButton": "CLOSE"
   }
 }

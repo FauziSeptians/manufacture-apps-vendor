@@ -96,5 +96,32 @@
     "title": "Postingan",
     "titleHighlight": "Terbaru Kami",
     "readMore": "Baca Selengkapnya"
+  },
+  "Contact": {
+    "kicker": "HUBUNGI KAMI",
+    "title": "Jalin Kerjasama",
+    "highlight": "Strategis Sekarang.",
+    "description": "Tim ahli kami siap membantu menjawab pertanyaan teknis maupun diskusi kemitraan bisnis Anda.",
+    "form": {
+      "nameLabel": "Nama Lengkap",
+      "namePlaceholder": "Contoh: Budi Santoso",
+      "companyLabel": "Perusahaan",
+      "companyPlaceholder": "PT. Nama Perusahaan",
+      "emailLabel": "Email Bisnis",
+      "emailPlaceholder": "nama@perusahaan.co.id",
+      "messageLabel": "Pesan / Rencana Kerjasama",
+      "messagePlaceholder": "Tuliskan spesifikasi produk atau tawaran kerjasama...",
+      "button": "KIRIM PERMINTAAN",
+      "submitting": "MENGIRIM..."
+    },
+    "validation": {
+      "nameMin": "Nama minimal 3 karakter",
+      "companyRequired": "Nama perusahaan harus diisi",
+      "emailInvalid": "Format email tidak valid",
+      "messageMin": "Pesan minimal 10 karakter"
+    },
+    "successTitle": "PESAN TERKIRIM!",
+    "success": "Terima kasih! Pesan Anda telah kami terima. Tim kami akan segera menghubungi Anda melalui email dalam 1x24 jam.",
+    "closeButton": "TUTUP"
   }
 }

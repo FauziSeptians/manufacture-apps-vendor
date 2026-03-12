@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { product } from '@/data/product';
+import { classNames } from '@/utils/classNames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PackageOpen } from 'lucide-react';
 import { useState } from 'react';
@@ -109,7 +110,17 @@ export default function ProductSection() {
                                   <SafeImage
                                     src={prod.url}
                                     alt={prod.title}
-                                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                                    className={classNames(
+                                      // 1. Ambil class khusus dari data (jika ada), kalau tidak ada pakai object-cover
+                                      prod?.imageClass || 'object-cover',
+
+                                      // 2. Pastikan posisi default center jika di imageClass tidak ada settingan posisi
+                                      !prod?.imageClass?.includes('object-') &&
+                                        'object-center',
+
+                                      // 3. Class animasi dan ukuran yang tetap konsisten
+                                      'h-full w-full transition-transform duration-700 group-hover:scale-110'
+                                    )}
                                     width={800}
                                     height={1000}
                                   />

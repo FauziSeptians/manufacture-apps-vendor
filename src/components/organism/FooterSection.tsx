@@ -1,6 +1,6 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider'; // Import hook
+import { useDict } from '@/components/providers/DictionaryProvider';
 import { Copyright, Instagram, Linkedin, Music2, Phone } from 'lucide-react';
 import { Typography } from '../ui/Typography';
 
@@ -42,17 +42,6 @@ export default function FooterSection() {
                     <Phone size={14} className="group-hover:text-amber-500" />
                   </div>
                   <span className="text-sm font-medium">0812-2070-9584</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/6282217237422"
-                  className="group flex items-center gap-3 transition-all hover:text-amber-500"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 transition-colors group-hover:bg-amber-500/10">
-                    <Phone size={14} className="group-hover:text-amber-500" />
-                  </div>
-                  <span className="text-sm font-medium">0822-1723-7422</span>
                 </a>
               </li>
             </ul>

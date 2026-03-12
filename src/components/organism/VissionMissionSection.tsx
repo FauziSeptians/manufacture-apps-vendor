@@ -93,7 +93,7 @@ export default function VissionMissionSection() {
         </div>
 
         <div className="absolute inset-x-0 top-0 z-10 h-40 bg-gradient-to-b from-slate-950 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-white via-white/20 to-transparent" />
       </div>
     </section>
   );
