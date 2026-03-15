@@ -5,7 +5,6 @@ import { MATERIALS } from '@/data/materials';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import ImageOptimize from '../atom/ImageOptimize';
-import { Card, CardContent } from '../ui/card';
 import { Typography } from '../ui/Typography';
 
 export default function MaterialSection() {
@@ -15,101 +14,95 @@ export default function MaterialSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndices((prev) => prev.map((idx) => (idx + 1) % MATERIALS.length));
-    }, 4000);
+    }, 50000);
     return () => clearInterval(timer);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [MATERIALS.length]);
+
+  // Layout logic: Mengikuti gaya asimetris namun tetap rapi
+  const gridConfigs = [
+    'md:col-span-7 md:row-span-2 h-[400px] md:h-full', // Hero Material
+    'md:col-span-5 md:row-span-1 h-[250px] md:h-full', // Side Material 1
+    'md:col-span-5 md:row-span-1 h-[250px] md:h-full', // Side Material 2
+  ];
+
+  // Kita hanya ambil 3 slot agar grid asimetris 7:5 terlihat konsisten dengan Facility
+  const displayIndices = indices.slice(0, 3);
 
   return (
-    <section
-      className="flex min-h-screen w-full flex-col overflow-hidden bg-[#fafafa] lg:flex-row"
-      id="materials"
-    >
-      {/* SISI KIRI: Teks dengan Reveal Animation */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="container mx-auto flex w-full items-center justify-center p-8 lg:w-1/2 lg:p-20"
-      >
-        <div className="flex max-w-lg flex-col gap-8">
+    <section className="overflow-hidden bg-white py-24" id="materials">
+      <div className="container mx-auto px-6">
+        {/* Header Section: Persis gaya Facility Section */}
+        <div className="mb-16">
           <Typography>
-            <div className="flex items-center gap-3">
-              <motion.span
-                initial={{ width: 0 }}
-                whileInView={{ width: 40 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="h-[1.5px] bg-amber-500"
-              />
-              <Typography.Kicker className="text-amber-500">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-4 flex items-center gap-4"
+            >
+              <div className="h-[2px] w-12 bg-amber-500"></div>
+              <span className="text-sm font-bold tracking-widest text-amber-500 uppercase">
                 {dict.Material.kicker}
-              </Typography.Kicker>
-            </div>
-            <Typography.Title className="text-3xl sm:text-4xl md:text-5xl">
+              </span>
+            </motion.div>
+
+            <Typography.Title className="text-4xl font-black tracking-tighter text-slate-900 uppercase md:text-6xl">
               {dict.Material.title} <br />
-              <Typography.Highlight>
+              <span className="text-amber-500">
                 {dict.Material.titleHighlight}
-              </Typography.Highlight>
+              </span>
             </Typography.Title>
-            <Typography.P className="text-base leading-relaxed text-slate-500 italic">
+
+            <Typography.P className="mt-6 max-w-2xl text-lg text-slate-500">
               {dict.Material.description}
             </Typography.P>
           </Typography>
         </div>
-      </motion.div>
 
-      {/* SISI KANAN: Grid Carousel */}
-      <div className="flex w-full items-center justify-center p-6 lg:w-1/2 lg:p-12">
-        <div className="grid w-full max-w-2xl grid-cols-2 gap-4">
-          {indices.map((materialIdx, gridIdx) => (
+        {/* Bento Grid: Konsisten dengan 12-kolom Facility Section */}
+        <div className="grid grid-cols-1 gap-6 md:h-[700px] md:grid-cols-12">
+          {displayIndices.map((materialIdx, gridIdx) => (
             <motion.div
               key={gridIdx}
-              initial={{ opacity: 0, scale: 0.8, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.6,
-                delay: gridIdx * 0.15,
-                ease: 'easeOut',
-              }}
+              transition={{ delay: gridIdx * 0.1 }}
+              className={`group relative overflow-hidden rounded-[2rem] bg-slate-100 shadow-sm ${gridConfigs[gridIdx] || 'md:col-span-4'}`}
             >
-              <Card className="group relative aspect-square overflow-hidden rounded-[2rem] border-none bg-slate-100 !p-0 shadow-md ring-1 ring-slate-200/50 transition-all duration-500 hover:shadow-2xl">
-                <CardContent className="h-full w-full !p-0">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={materialIdx}
-                      initial={{ opacity: 0, filter: 'blur(10px)' }}
-                      animate={{ opacity: 1, filter: 'blur(0px)' }}
-                      exit={{ opacity: 0, filter: 'blur(10px)' }}
-                      transition={{ duration: 0.8 }}
-                      className="h-full w-full"
-                    >
-                      <ImageOptimize
-                        alt={MATERIALS[materialIdx].title}
-                        src={MATERIALS[materialIdx].src}
-                        width={1920}
-                        height={1080}
-                        className="h-full w-full object-cover grayscale transition-all duration-1000 group-hover:scale-110 group-hover:grayscale-0"
-                      />
-                    </motion.div>
-                  </AnimatePresence>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={MATERIALS[materialIdx].src}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="absolute inset-0 h-full w-full"
+                >
+                  <ImageOptimize
+                    src={MATERIALS[materialIdx].src}
+                    alt={MATERIALS[materialIdx].title}
+                    width={1200}
+                    height={800}
+                    className="h-full w-full object-cover transition duration-1000 group-hover:scale-110"
+                  />
+                  {/* Overlay Gradient: Gelap di bawah agar teks putih terbaca */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                </motion.div>
+              </AnimatePresence>
 
-                  {/* Overlay Nama Material */}
-                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <motion.span
-                      className="text-xs font-bold tracking-widest text-white uppercase"
-                      initial={{ y: 10 }}
-                      whileHover={{ y: 0 }}
-                    >
-                      {MATERIALS[materialIdx].title}
-                    </motion.span>
-                  </div>
-
-                  <div className="absolute top-4 right-4 h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* Content Overlay */}
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-8">
+                <span className="mb-2 font-mono text-xs tracking-widest text-white/50 uppercase">
+                  Selected Fabric
+                </span>
+                <h3
+                  className={`font-bold text-white uppercase ${gridIdx === 0 ? 'text-3xl md:text-4xl' : 'text-xl md:text-2xl'}`}
+                >
+                  {MATERIALS[materialIdx].title}
+                </h3>
+              </div>
             </motion.div>
           ))}
         </div>

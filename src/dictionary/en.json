@@ -123,5 +123,40 @@
     "successTitle": "MESSAGE SENT!",
     "success": "Thank you! We have received your message. Our team will contact you via email within 1x24 hours.",
     "closeButton": "CLOSE"
+  },
+  "facility": {
+    "header": {
+      "kicker": "Our Workshop",
+      "title": "Facility & Infrastructure",
+      "subtitle": "Complete facility support to ensure every production stage runs optimally."
+    },
+    "main_production": {
+      "title": "Main Production Area",
+      "desc": "Spacious production floor with an integrated workflow to efficiently handle large-volume orders."
+    },
+    "sample_room": {
+      "title": "Sample Room",
+      "desc": "Where ideas and designs are first brought to life as precise product prototypes."
+    },
+    "embroidery": {
+      "title": "Embroidery Facilities",
+      "desc": "Automated embroidery machines for applying logos and graphic details with high sharpness and neatness."
+    },
+    "screen_printing": {
+      "title": "Screen Printing Area",
+      "desc": "Manual and automated graphic printing facilities using quality inks for long-lasting results."
+    },
+    "bartack": {
+      "title": "Bartack Station",
+      "desc": "Special reinforcement on bag stress points to ensure maximum durability for heavy-duty use."
+    },
+    "production_process": {
+      "title": "Production Process",
+      "desc": "Every assembly stage is carried out with strict operational standards to maintain quality consistency."
+    },
+    "guest_room": {
+      "title": "Guest Reception Room",
+      "desc": "A comfortable discussion area to welcome buyers and partners in planning product collaborations."
+    }
   }
 }

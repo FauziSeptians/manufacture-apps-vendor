@@ -123,5 +123,40 @@
     "successTitle": "PESAN TERKIRIM!",
     "success": "Terima kasih! Pesan Anda telah kami terima. Tim kami akan segera menghubungi Anda melalui email dalam 1x24 jam.",
     "closeButton": "TUTUP"
+  },
+  "facility": {
+    "header": {
+      "kicker": "Our Workshop",
+      "title": "Fasilitas & Infrastruktur",
+      "subtitle": "Dukungan fasilitas lengkap untuk memastikan setiap tahap produksi berjalan optimal."
+    },
+    "main_production": {
+      "title": "Area Produksi Utama",
+      "desc": "Lantai produksi luas dengan alur kerja terintegrasi untuk menangani pesanan volume besar secara efisien."
+    },
+    "sample_room": {
+      "title": "Ruang Sampel",
+      "desc": "Tempat di mana ide dan desain pertama kali diwujudkan menjadi prototipe produk yang presisi."
+    },
+    "embroidery": {
+      "title": "Fasilitas Bordir",
+      "desc": "Mesin bordir otomatis untuk aplikasi logo dan detail grafis dengan ketajaman serta kerapihan tinggi."
+    },
+    "screen_printing": {
+      "title": "Area Sablon",
+      "desc": "Fasilitas cetak grafis manual maupun otomatis menggunakan tinta berkualitas untuk hasil yang tahan lama."
+    },
+    "bartack": {
+      "title": "Stasiun Bartack",
+      "desc": "Penguatan khusus pada titik-titik beban tas untuk menjamin daya tahan maksimal pada penggunaan berat."
+    },
+    "production_process": {
+      "title": "Proses Pengerjaan",
+      "desc": "Setiap tahap perakitan dilakukan dengan standar operasional yang ketat demi menjaga konsistensi kualitas."
+    },
+    "guest_room": {
+      "title": "Ruang Penerimaan Tamu",
+      "desc": "Area diskusi yang nyaman untuk menyambut buyer dan mitra dalam merencanakan kolaborasi produk."
+    }
   }
 }

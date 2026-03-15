@@ -126,6 +126,21 @@ export const product = {
       url: '/assets/product/travel-bag/travel-bag.jpeg',
       imageClass: '',
     },
+    {
+      title: 'travel-bag-1',
+      url: '/assets/product/travel-bag/Travel bag.jpg',
+      imageClass: '',
+    },
+    {
+      title: 'travel-bag-2',
+      url: '/assets/product/travel-bag/Travel bag.png',
+      imageClass: '',
+    },
+    {
+      title: 'travel-bag-3',
+      url: '/assets/product/travel-bag/travel-bag.png',
+      imageClass: '',
+    },
   ],
   Slingbag: [
     {
@@ -166,7 +181,28 @@ export const product = {
       imageClass: '',
     },
   ],
-  totebag: [],
+  totebag: [
+    {
+      title: 'totebag-1',
+      url: '/assets/product/totebag/mills-exodus-totebag-07805070-exodus_totebag-3.webp',
+      imageClass: '',
+    },
+    {
+      title: 'totebag-2',
+      url: '/assets/product/totebag/Totebag.jpeg',
+      imageClass: '',
+    },
+    {
+      title: 'totebag-3',
+      url: '/assets/product/totebag/Totebag.jpg.png',
+      imageClass: '',
+    },
+    {
+      title: 'totebag-3',
+      url: '/assets/product/totebag/Totebag (1).jpeg',
+      imageClass: '',
+    },
+  ],
   pouch: [
     {
       title: 'pouch-1',
