@@ -44,4 +44,19 @@ export const POSTS = [
     ],
     image: '/assets/news/covid.jpg',
   },
+  {
+    id: 4,
+    category: 'Partnership',
+    date: '16 Mar 2026',
+    author: 'Admin Wartiwan',
+    title: 'Kolaborasi Sukses PT WIN & Tweely for Bag',
+    excerpt:
+      'Selama satu hingga dua tahun terakhir, PT Wartiwan Industri Nusantara (PT WIN) telah menjalin kemitraan strategis yang sangat solid dengan brand tas lokal ternama, Tweely for Bag...',
+    content: [
+      'Selama satu hingga dua tahun terakhir, PT Wartiwan Industri Nusantara (PT WIN) telah menjalin kemitraan strategis yang sangat solid dengan brand tas lokal ternama, Tweely for Bag. Perjalanan kolaborasi ini bukan sekadar proses pemenuhan pesanan biasa, melainkan bukti nyata dari semangat perusahaan kami dalam membangun dan merawat kerja sama jangka panjang yang positif, transparan, dan saling mendukung dengan setiap buyer.',
+      'Sebagai mitra manufaktur yang berdedikasi, PT WIN merasa sangat bangga karena terus dipercaya untuk memproduksi salah satu produk best seller andalan dari Tweely, yaitu Hasky Backpack. Selain itu, PT WIN juga diberikan kepercayaan penuh untuk memproduksi beberapa artikel tas populer lainnya seperti seri Flesy, Jessy, dan Mozza. Tweely sendiri dikenal luas di industri fesyen lokal sebagai merek yang sangat fokus membidik segmentasi pasar tas wanita dengan desain yang cantik dan praktis.',
+      'Kesuksesan dalam memenuhi standar kualitas tinggi untuk lini tas wanita eksklusif ini menjadi pembuktian atas fleksibilitas dan luasnya kapasitas manufaktur yang kami miliki. Kemampuan operasional PT WIN sejatinya sangat serbaguna dan adaptif, tidak terbatas pada satu genre fesyen saja, baik untuk segmentasi wanita maupun pria. Kami hadir sebagai mitra pabrikasi andalan yang siap bertumbuh dan mewujudkan visi brand-brand dari segala segmen pasar.',
+    ],
+    image: '/assets/news/tweely.png',
+  },
 ];
