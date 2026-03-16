@@ -12,13 +12,13 @@ export async function POST(request: Request) {
       // Branding tetap pakai nama PT, tapi alamat wajib onboarding@resend.dev
       from: 'PT. Wartiwan Industri Nusantara <onboarding@resend.dev>',
       // Ganti dengan email yang kamu gunakan untuk login di dashboard Resend
-      to: ['fauzibelajar96@gmail.com'],
+      to: ['wartiwanindustrial@gmail.com'],
       subject: `Inquiry Partner: ${companyName}`,
       replyTo: email, // Memudahkan admin balas langsung ke email pengirim
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background-color: #0a0a0a; padding: 30px; text-align: center;">
-            <h1 style="color: #f59e0b; margin: 0; font-size: 20px; letter-spacing: 2px;">WARTIWAN INDUSTRI</h1>
+            <h1 style="color: #f59e0b; margin: 0; font-size: 20px; letter-spacing: 2px;">WARTIWAN INDUSTRIAL</h1>
             <p style="color: #94a3b8; font-size: 12px; margin-top: 5px;">NEW MANUFACTURING INQUIRY</p>
           </div>
           <div style="padding: 30px; background-color: #ffffff;">
