@@ -53,7 +53,41 @@
     "modal": {
       "defaultDesc": "High-quality industrial products manufactured with WARTIWAN Industrial precision standards.",
       "readyStatus": "Ready for Production",
-      "customStatus": "Custom Branding Available"
+      "customStatus": "Custom Branding Available",
+      "categories": {
+        "waistbag": {
+          "title": "Waistbag Series",
+          "desc": "Present an exclusive waistbag collection for your business scale. Designed with ergonomic shapes and rugged materials, Wartiwan Industri Nusantara is ready to manufacture these articles with specifications and branding details fully customizable to your brand identity."
+        },
+        "backpack": {
+          "title": "Backpack Series",
+          "desc": "Realize your large-scale flagship product line with our high-capacity, durable backpack collection. Through PT WIN's manufacturing facilities, every compartment and stitch construction is ready to be precisely customized to carry your brand pride in every consumer activity."
+        },
+        "totebag": {
+          "title": "Totebag Series",
+          "desc": "Enhance the visual appeal of your fashion line through our versatile and aesthetic totebag series. We blend casual practicality with accurate material cutting techniques, offering high-quality canvas or nylon as the perfect canvas to highlight your brand's design character to a wider market."
+        },
+        "slingbag": {
+          "title": "Sling Bag Series",
+          "desc": "Meet the mobility needs of urban dwellers with our compact and dynamic sling bag line. We ensure every functional detail, from smooth zippers to strap durability, is produced through strict quality control standards, making it an essential daily product representing your brand's superior quality."
+        },
+        "totepack": {
+          "title": "Totepack Series",
+          "desc": "Introduce multifunctional innovation to your catalog with our practical hybrid totepack design. Designed for a flexible transition from carry-on to backpack, our manufacturing team is ready to execute these complex patterns with the best selected materials, specifically to complete your brand's exclusive collection."
+        },
+        "pouch": {
+          "title": "Pouch Series",
+          "desc": "Complete your retail product variety with our versatile pouch series that prioritizes space efficiency and neatness. With large-scale detailed craftsmanship, Wartiwan Industri Nusantara accommodates the addition of custom embroidery, labels, or screen printing to perfect your brand's accessory portfolio."
+        },
+        "laptop": {
+          "title": "Laptop Bag / Laptop Sleeve Series",
+          "desc": "Offer maximum protection wrapped in a professional look through our premium laptop bag collection. Equipped with solid foam padding structures and water-repellent material options, trust PT WIN for the production process to produce tough work gear that elevates your brand's credibility."
+        },
+        "shoesbag": {
+          "title": "Shoes Bag Series",
+          "desc": "Enhance the value of your sports and travel product lines with functional shoes bags specifically designed to protect footwear optimally. Using easy-to-clean materials and tough stitch construction, PT WIN ensures every detail is precisely manufactured to be a premium utility complement ready to carry your brand identity."
+        }
+      }
     }
   },
   "Material": {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider';
+import { useDict, useLocale } from '@/components/providers/DictionaryProvider';
 import {
   Dialog,
   DialogContent,
@@ -27,9 +27,7 @@ import { Typography } from '../ui/Typography';
 
 export default function ProductSection() {
   const dict = useDict();
-  // Asumsi locale disimpan di cookie atau bisa diambil via logic sederhana
-  // Jika kamu simpan locale di cookie "NEXT_LOCALE", panggil logic pengambilannya di sini
-  const locale = 'id'; // Contoh sederhana, sesuaikan dengan logic cookie kamu
+  const locale = useLocale();
 
   const [tab, setTab] = useState('waistbag');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -194,8 +192,7 @@ export default function ProductSection() {
                 </DialogTitle>
                 <div className="my-4 h-1 w-12 bg-amber-500" />
                 <DialogDescription className="mt-4 text-base leading-relaxed text-slate-600">
-                  {selectedProduct?.description?.[locale] ||
-                    dict.Product.modal.defaultDesc}
+                  {selectedProduct?.description?.[locale]}
                 </DialogDescription>
               </DialogHeader>
               <div className="mt-8 flex flex-col gap-3">
