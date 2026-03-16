@@ -19,6 +19,11 @@ export default function LayoutTemplates({
       title: dict.Navbar.menu.materials,
       route: '#materials',
     },
+    {
+      key: 'facility',
+      title: dict.Navbar.menu.facility,
+      route: '#facility',
+    },
     { key: 'team', title: dict.Navbar.menu.team, route: '#team' },
     { key: 'partner', title: dict.Navbar.menu.partner, route: '#partner' },
     { key: 'news', title: dict.Navbar.menu.news, route: '#news' },

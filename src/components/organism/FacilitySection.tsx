@@ -85,7 +85,7 @@ const FacilitySection = () => {
   }, [rotatingData.length]);
 
   return (
-    <section className="overflow-hidden bg-white py-16 md:py-24">
+    <section className="overflow-hidden bg-white py-16 md:py-24" id="facility">
       <div className="container mx-auto px-6">
         {/* Header Section dengan Typography Component */}
         <div className="mb-12 md:mb-16">
