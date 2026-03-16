@@ -11,22 +11,17 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Globe, Menu, Phone, X } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import logo from '../../../public/assets/logo/logo-wartiwan.png';
+import ImageOptimize from '../atom/ImageOptimize';
 
 export const Logo = () => (
-  <svg
-    fill="none"
-    height="32"
-    viewBox="0 0 32 32"
-    width="32"
-    className="text-white"
-  >
-    <path
-      clipRule="evenodd"
-      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-      fill="currentColor"
-      fillRule="evenodd"
-    />
-  </svg>
+  <ImageOptimize
+    src={logo.src}
+    width={1280}
+    height={720}
+    alt="logo"
+    className="size-16"
+  />
 );
 
 export default function NavbarComponent({

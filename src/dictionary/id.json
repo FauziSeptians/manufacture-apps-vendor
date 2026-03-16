@@ -53,7 +53,41 @@
     "modal": {
       "defaultDesc": "Produk industrial berkualitas tinggi yang diproduksi dengan standar presisi WARTIWAN Industrial.",
       "readyStatus": "Siap Produksi",
-      "customStatus": "Tersedia Branding Kustom"
+      "customStatus": "Tersedia Branding Kustom",
+      "categories": {
+        "waistbag": {
+          "title": "Waistbag Series",
+          "desc": "Hadirkan koleksi waistbag eksklusif untuk skala bisnis Anda. Dirancang dengan desain ergonomis dan material tangguh, Wartiwan Industri Nusantara siap memproduksi artikel ini dengan spesifikasi dan detail branding yang sepenuhnya dapat disesuaikan dengan identitas brand Anda."
+        },
+        "backpack": {
+          "title": "Backpack Series",
+          "desc": "Wujudkan lini produk andalan berskala besar dengan koleksi backpack berkapasitas optimal dan berdaya tahan tinggi. Melalui fasilitas manufaktur PT WIN, setiap kompartemen dan konstruksi jahitan siap dikustomisasi secara presisi untuk membawa kebanggaan brand Anda di setiap aktivitas konsumen."
+        },
+        "totebag": {
+          "title": "Totebag Series",
+          "desc": "Tingkatkan daya tarik visual lini fesyen Anda melalui seri totebag yang serbaguna dan estetis. Kami memadukan kepraktisan gaya kasual dengan teknik pemotongan bahan yang akurat, menawarkan kanvas atau nilon berkualitas sebagai ruang sempurna untuk menonjolkan karakter desain brand Anda kepada pasar yang lebih luas."
+        },
+        "slingbag": {
+          "title": "Sling Bag Series",
+          "desc": "Jawab kebutuhan mobilitas kaum urban dengan lini sling bag berdesain compact dan dinamis. Kami memastikan setiap detail fungsional mulai dari kelancaran ritsleting hingga durabilitas strap diproduksi melalui standar quality control yang ketat, menjadikannya produk esensial harian yang mewakili kualitas unggul brand Anda."
+        },
+        "totepack": {
+          "title": "Totepack Series",
+          "desc": "Hadirkan inovasi multifungsi dalam katalog Anda lewat desain totepack hibrida yang praktis. Dirancang untuk transisi penggunaan yang fleksibel dari jinjing menjadi ransel, tim manufaktur kami siap mengeksekusi kerumitan pola ini dengan material pilihan terbaik, khusus untuk melengkapi koleksi eksklusif brand Anda."
+        },
+        "pouch": {
+          "title": "Pouch Series",
+          "desc": "Lengkapi variasi produk ritel Anda dengan seri pouch serbaguna yang mengedepankan efisiensi tata ruang dan kerapian. Dengan pengerjaan detail berskala besar, Wartiwan Industri Nusantara mengakomodasi penambahan bordir, label, maupun sablon khusus untuk menyempurnakan portofolio aksesoris brand Anda."
+        },
+        "laptop": {
+          "title": "Tas Laptop / Laptop Sleeve Series",
+          "desc": "Tawarkan perlindungan maksimal berbalut tampilan profesional melalui koleksi tas laptop premium kami. Dilengkapi struktur padding pelindung busa yang solid dan opsi material water repellent, percayakan proses produksinya kepada PT WIN untuk menghasilkan perlengkapan kerja tangguh yang mengangkat kredibilitas brand Anda."
+        },
+        "shoesbag": {
+          "title": "Shoes Bag Series",
+          "desc": "Tingkatkan nilai tambah lini produk sport dan traveling Anda dengan shoes bag fungsional yang dirancang khusus untuk melindungi alas kaki secara optimal. Menggunakan material yang mudah dibersihkan serta konstruksi jahitan yang tangguh, PT WIN memastikan setiap detail diproduksi secara presila untuk menjadi pelengkap utilitas premium yang siap mengusung identitas brand Anda."
+        }
+      }
     }
   },
   "Material": {
