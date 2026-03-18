@@ -203,25 +203,19 @@ export const product = {
   slingbag: [
     {
       title: 'sling-bag-1',
-      url: '/assets/product/sling-bag/sling-bag.jpg',
+      url: '/assets/product/sling-bag/slingbag1.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
     {
       title: 'sling-bag-2',
-      url: '/assets/product/sling-bag/sling-bag2.jpg',
+      url: '/assets/product/sling-bag/slingbag2.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
     {
       title: 'sling-bag-3',
-      url: '/assets/product/sling-bag/sling-bag3.webp',
-      imageClass: '',
-      description: DESCRIPTIONS.slingbag,
-    },
-    {
-      title: 'sling-bag-4',
-      url: '/assets/product/sling-bag/sling-bag4.png',
+      url: '/assets/product/sling-bag/slingbag3.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
