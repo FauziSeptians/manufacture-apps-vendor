@@ -14,7 +14,7 @@ export default function MaterialSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndices((prev) => prev.map((idx) => (idx + 1) % MATERIALS.length));
-    }, 50000);
+    }, 8000);
     return () => clearInterval(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [MATERIALS.length]);

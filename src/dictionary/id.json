@@ -50,6 +50,8 @@
     "titleHighlight": "INDUSTRI.",
     "noDataTitle": "Katalog Belum Tersedia",
     "noDataDesc": "Maaf, produk untuk kategori {category} sedang dalam proses pembaruan data.",
+    "minOrder": "Minimal Order",
+    "pcs": "pcs",
     "modal": {
       "defaultDesc": "Produk industrial berkualitas tinggi yang diproduksi dengan standar presisi WARTIWAN Industrial.",
       "readyStatus": "Siap Produksi",

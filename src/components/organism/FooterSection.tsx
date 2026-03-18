@@ -56,11 +56,11 @@ export default function FooterSection() {
               {[
                 {
                   icon: <Instagram size={18} />,
-                  href: 'https://instagram.com/wartiwanindustrial',
+                  href: 'https://instagram.com/wartiwanindustri',
                 },
                 {
                   icon: <Music2 size={18} />,
-                  href: 'https://tiktok.com/@wartiwanindustrial',
+                  href: 'https://tiktok.com/@wartiwanindustri',
                 },
                 {
                   icon: <Linkedin size={18} />,

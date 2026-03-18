@@ -50,6 +50,8 @@
     "titleHighlight": "CRAFTSMANSHIP.",
     "noDataTitle": "Catalog Not Available",
     "noDataDesc": "Sorry, products for the {category} category are currently being updated.",
+    "minOrder": "Min. Order",
+    "pcs": "pcs",
     "modal": {
       "defaultDesc": "High-quality industrial products manufactured with WARTIWAN Industrial precision standards.",
       "readyStatus": "Ready for Production",

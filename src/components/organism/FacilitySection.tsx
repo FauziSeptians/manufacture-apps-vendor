@@ -80,7 +80,7 @@ const FacilitySection = () => {
         top: (prev.top + 1) % rotatingData.length,
         bottom: (prev.bottom + 1) % rotatingData.length,
       }));
-    }, 50000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [rotatingData.length]);
 

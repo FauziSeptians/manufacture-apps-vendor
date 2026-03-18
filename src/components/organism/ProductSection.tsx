@@ -104,25 +104,31 @@ export default function ProductSection() {
                               className="group !h-96 cursor-pointer overflow-hidden rounded-[2rem] border-none bg-slate-50 !p-0 shadow-none transition-all hover:bg-slate-100"
                             >
                               <CardContent className="flex h-full flex-col p-0">
-                                <div className="flex-1 overflow-hidden">
+                                <div className="relative flex-1 overflow-hidden">
+                                  {/* Label Modern: Glassmorphism Style */}
+                                  <div className="absolute top-4 right-4 z-10 flex items-center gap-2 overflow-hidden rounded-xl border border-white/40 bg-white/70 p-1 pl-3 shadow-lg shadow-black/5 backdrop-blur-md transition-all duration-500 group-hover:translate-y-[-2px] group-hover:shadow-xl">
+                                    <span className="text-[9px] font-black tracking-widest text-slate-500 uppercase">
+                                      {dict.Product.minOrder}
+                                    </span>
+                                    <div className="rounded-lg bg-slate-900 px-2 py-1 text-[10px] font-bold text-white">
+                                      50 {dict.Product.pcs}
+                                    </div>
+                                  </div>
+
                                   <SafeImage
                                     src={prod.url}
                                     alt={prod.title}
                                     className={classNames(
-                                      // 1. Ambil class khusus dari data (jika ada), kalau tidak ada pakai object-cover
                                       prod?.imageClass || 'object-cover',
-
-                                      // 2. Pastikan posisi default center jika di imageClass tidak ada settingan posisi
                                       !prod?.imageClass?.includes('object-') &&
                                         'object-center',
-
-                                      // 3. Class animasi dan ukuran yang tetap konsisten
-                                      'h-full w-full transition-transform duration-700 group-hover:scale-110'
+                                      'h-full w-full transition-transform duration-[1.5s] ease-out group-hover:scale-110'
                                     )}
                                     width={800}
                                     height={1000}
                                   />
                                 </div>
+
                                 <div className="p-6">
                                   <span className="text-[10px] font-bold tracking-[0.2em] text-amber-500 uppercase">
                                     {category} Series
