@@ -4,6 +4,7 @@ import { useDict } from '@/components/providers/DictionaryProvider'; // Import h
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Rocket, Target } from 'lucide-react';
 import { useRef } from 'react';
+import visi from '../../../public/assets/visi/visi.jpg';
 import SafeImage from '../atom/ImageOptimize';
 import InformationCard from '../atom/InformationCard';
 import { Typography } from '../ui/Typography';
@@ -35,11 +36,11 @@ export default function VissionMissionSection() {
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SafeImage
-            src="https://italianartisan.com/wp-content/uploads/2024/04/find-the-right-clothing-manufacturer.webp"
+            src={visi.src}
             alt="Manufacturing Background"
             width={1920}
             height={1080}
-            className="h-full w-full object-cover opacity-30 grayscale"
+            className="h-full w-full object-cover object-top opacity-30 grayscale"
           />
           <div className="absolute inset-0 bg-slate-950/60" />
         </div>

@@ -79,6 +79,18 @@ export const product = {
       imageClass: '',
       description: DESCRIPTIONS.waistbag,
     },
+    {
+      title: 'Waistbag-8',
+      url: '/assets/product/waistbag/waistbag8.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-9',
+      url: '/assets/product/waistbag/waistbag9.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
   ],
   backpack: [
     {
@@ -147,6 +159,42 @@ export const product = {
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
+    {
+      title: 'Backpack-12',
+      url: '/assets/product/backpack/backpack12.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-13',
+      url: '/assets/product/backpack/backpack13.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-14',
+      url: '/assets/product/backpack/backpack14.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-15',
+      url: '/assets/product/backpack/backpack15.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-16',
+      url: '/assets/product/backpack/backpack16.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-17',
+      url: '/assets/product/backpack/backpack17.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
   ],
   totepack: [
     {
@@ -161,41 +209,23 @@ export const product = {
       imageClass: '',
       description: DESCRIPTIONS.totepack,
     },
-    {
-      title: 'totepack-3',
-      url: '/assets/product/totepack/totepack3.jpeg',
-      imageClass: '',
-      description: DESCRIPTIONS.totepack,
-    },
-    {
-      title: 'totepack-4',
-      url: '/assets/product/totepack/totepack4.jpeg',
-      imageClass: '',
-      description: DESCRIPTIONS.totepack,
-    },
   ],
   travelbag: [
     {
-      title: 'travel-bag',
+      title: 'travel-bag-1',
       url: '/assets/product/travel-bag/travel-bag.jpeg',
       imageClass: '',
       description: DESCRIPTIONS.travelbag,
     },
     {
-      title: 'travel-bag-1',
+      title: 'travel-bag-2',
       url: '/assets/product/travel-bag/Travel bag.jpg',
       imageClass: '',
       description: DESCRIPTIONS.travelbag,
     },
     {
-      title: 'travel-bag-2',
-      url: '/assets/product/travel-bag/Travel bag.png',
-      imageClass: '',
-      description: DESCRIPTIONS.travelbag,
-    },
-    {
       title: 'travel-bag-3',
-      url: '/assets/product/travel-bag/travel-bag.png',
+      url: '/assets/product/travel-bag/Travel bag.png',
       imageClass: '',
       description: DESCRIPTIONS.travelbag,
     },
@@ -219,6 +249,12 @@ export const product = {
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
+    {
+      title: 'sling-bag-4',
+      url: '/assets/product/sling-bag/slingbag4.png',
+      imageClass: '',
+      description: DESCRIPTIONS.slingbag,
+    },
   ],
   shoesbag: [
     {
@@ -229,7 +265,7 @@ export const product = {
     },
     {
       title: 'shoes-bag-2',
-      url: '/assets/product/shoes-bag/shoes-bag2.webp',
+      url: '/assets/product/shoes-bag/shoes-bag2.png',
       imageClass: '',
       description: DESCRIPTIONS.shoesbag,
     },
@@ -261,7 +297,7 @@ export const product = {
     },
     {
       title: 'totebag-4',
-      url: '/assets/product/totebag/totebag4.webp',
+      url: '/assets/product/totebag/totebag4.png',
       imageClass: '',
       description: DESCRIPTIONS.totebag,
     },
@@ -280,7 +316,7 @@ export const product = {
       description: DESCRIPTIONS.pouch,
     },
     {
-      title: 'pouch-3',
+      title: 'laptop bag',
       url: '/assets/product/pouch/pouch3.png',
       imageClass: '',
       description: DESCRIPTIONS.pouch,
