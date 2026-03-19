@@ -233,7 +233,7 @@ export const product = {
     },
     {
       title: 'sling-bag-4',
-      url: '/assets/product/sling-bag/slingbag4.png',
+      url: '/assets/product/sling-bag/slingbag5.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
