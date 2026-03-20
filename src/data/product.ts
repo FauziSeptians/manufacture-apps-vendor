@@ -36,157 +36,205 @@ const DESCRIPTIONS = {
 
 // 2. Export Data Product
 export const product = {
-  waistbag: [
-    {
-      title: 'Waistbag-1',
-      url: '/assets/product/waistbag/waistbag1.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-2',
-      url: '/assets/product/waistbag/waistbag2.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-3',
-      url: '/assets/product/waistbag/waistbag3.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-4',
-      url: '/assets/product/waistbag/waistbag4.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-5',
-      url: '/assets/product/waistbag/waistbag5.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-6',
-      url: '/assets/product/waistbag/waistbag6.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-7',
-      url: '/assets/product/waistbag/waistbag7.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-8',
-      url: '/assets/product/waistbag/waistbag8.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-9',
-      url: '/assets/product/waistbag/waistbag9.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-    {
-      title: 'Waistbag-10',
-      url: '/assets/product/waistbag/waistbag10.png',
-      imageClass: '',
-      description: DESCRIPTIONS.waistbag,
-    },
-  ],
   backpack: [
     {
       title: 'Backpack-1',
+      url: '/assets/product/backpack/backpack18.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-2', // Sebelumnya Backpack-1 ke-2
+      url: '/assets/product/backpack/backpack19.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-3', // Sebelumnya Backpack-1 ke-3
+      url: '/assets/product/backpack/backpack20.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-4', // Sebelumnya Backpack-1 ke-4
+      url: '/assets/product/backpack/backpack21.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-5', // Sebelumnya Backpack-1 ke-5
+      url: '/assets/product/backpack/backpack22.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-6', // Sebelumnya Backpack-1 ke-6
+      url: '/assets/product/backpack/backpack23.png',
+      imageClass: '',
+      description: DESCRIPTIONS.backpack,
+    },
+    {
+      title: 'Backpack-7', // Sebelumnya Backpack-1 ke-7
       url: '/assets/product/backpack/backpack1.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-2',
+      title: 'Backpack-8', // Sebelumnya Backpack-2
       url: '/assets/product/backpack/backpack3.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-3',
+      title: 'Backpack-9', // Sebelumnya Backpack-3
       url: '/assets/product/backpack/backpack7.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-4',
+      title: 'Backpack-10', // Sebelumnya Backpack-4
       url: '/assets/product/backpack/backpack8.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-5',
+      title: 'Backpack-11', // Sebelumnya Backpack-5
       url: '/assets/product/backpack/backpack9.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-6',
+      title: 'Backpack-12', // Sebelumnya Backpack-6
       url: '/assets/product/backpack/backpack10.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-7',
+      title: 'Backpack-13', // Sebelumnya Backpack-7
       url: '/assets/product/backpack/backpack11.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-8',
+      title: 'Backpack-14', // Sebelumnya Backpack-8
       url: '/assets/product/backpack/backpack12.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-9',
+      title: 'Backpack-15', // Sebelumnya Backpack-9
       url: '/assets/product/backpack/backpack13.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-10',
+      title: 'Backpack-16', // Sebelumnya Backpack-10
       url: '/assets/product/backpack/backpack14.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-11',
+      title: 'Backpack-17', // Sebelumnya Backpack-11
       url: '/assets/product/backpack/backpack15.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-12',
+      title: 'Backpack-18', // Sebelumnya Backpack-12
       url: '/assets/product/backpack/backpack16.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
     {
-      title: 'Backpack-13',
+      title: 'Backpack-19', // Sebelumnya Backpack-13
       url: '/assets/product/backpack/backpack17.png',
       imageClass: '',
       description: DESCRIPTIONS.backpack,
     },
   ],
+  waistbag: [
+    {
+      title: 'Waistbag-1',
+      url: '/assets/product/waistbag/waistbag11.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-2', // Sebelumnya Waistbag-1 kedua
+      url: '/assets/product/waistbag/waistbag1.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-3', // Sebelumnya Waistbag-2
+      url: '/assets/product/waistbag/waistbag2.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-4', // Sebelumnya Waistbag-3
+      url: '/assets/product/waistbag/waistbag3.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-5', // Sebelumnya Waistbag-4
+      url: '/assets/product/waistbag/waistbag4.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-6', // Sebelumnya Waistbag-5
+      url: '/assets/product/waistbag/waistbag5.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-7', // Sebelumnya Waistbag-6
+      url: '/assets/product/waistbag/waistbag6.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-8', // Sebelumnya Waistbag-7
+      url: '/assets/product/waistbag/waistbag7.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-9', // Sebelumnya Waistbag-8
+      url: '/assets/product/waistbag/waistbag8.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-10', // Sebelumnya Waistbag-9
+      url: '/assets/product/waistbag/waistbag9.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+    {
+      title: 'Waistbag-11', // Sebelumnya Waistbag-10
+      url: '/assets/product/waistbag/waistbag10.png',
+      imageClass: '',
+      description: DESCRIPTIONS.waistbag,
+    },
+  ],
   totepack: [
     {
       title: 'totepack-1',
-      url: '/assets/product/totepack/totepack1.jpeg',
+      url: '/assets/product/totepack/totepack3.png',
       imageClass: '',
       description: DESCRIPTIONS.totepack,
     },
     {
       title: 'totepack-2',
+      url: '/assets/product/totepack/totepack1.jpeg',
+      imageClass: '',
+      description: DESCRIPTIONS.totepack,
+    },
+    {
+      title: 'totepack-3',
       url: '/assets/product/totepack/totepack2.jpeg',
       imageClass: '',
       description: DESCRIPTIONS.totepack,
@@ -215,24 +263,36 @@ export const product = {
   slingbag: [
     {
       title: 'sling-bag-1',
-      url: '/assets/product/sling-bag/slingbag1.png',
+      url: '/assets/product/sling-bag/slingbag6.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
     {
       title: 'sling-bag-2',
-      url: '/assets/product/sling-bag/slingbag2.png',
+      url: '/assets/product/sling-bag/slingbag7.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
     {
       title: 'sling-bag-3',
-      url: '/assets/product/sling-bag/slingbag3.png',
+      url: '/assets/product/sling-bag/slingbag1.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,
     },
     {
       title: 'sling-bag-4',
+      url: '/assets/product/sling-bag/slingbag2.png',
+      imageClass: '',
+      description: DESCRIPTIONS.slingbag,
+    },
+    {
+      title: 'sling-bag-5',
+      url: '/assets/product/sling-bag/slingbag3.png',
+      imageClass: '',
+      description: DESCRIPTIONS.slingbag,
+    },
+    {
+      title: 'sling-bag-6',
       url: '/assets/product/sling-bag/slingbag5.png',
       imageClass: '',
       description: DESCRIPTIONS.slingbag,

@@ -29,7 +29,7 @@ export default function ProductSection() {
   const dict = useDict();
   const locale = useLocale();
 
-  const [tab, setTab] = useState('waistbag');
+  const [tab, setTab] = useState('backpack');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
