@@ -2,7 +2,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.wartiwanindustri.com/';
+  const baseUrl = 'https://www.wartiwanindustri.com';
 
   // Daftar ID berita kamu (Sesuai slug yang kamu gunakan)
   const newsIds = [
