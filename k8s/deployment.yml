@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manufacture-apps-vendor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manufacture-apps-vendor
+  template:
+    metadata:
+      labels:
+        app: manufacture-apps-vendor
+    spec:
+      containers:
+        - name: manufacture-apps-vendor
+          image: muhammadfauzi/manufacture-apps-vendor:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: manufacture-apps-vendor-service
+spec:
+  type: NodePort
+  selector:
+    app: manufacture-apps-vendor
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30800
