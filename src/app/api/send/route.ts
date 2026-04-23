@@ -1,20 +1,23 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
+    // Pindahkan inisialisasi ke dalam handler untuk mencegah error saat build jika API KEY kosong
+    const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
+    
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('RESEND_API_KEY is not defined. Email will not be sent.');
+    }
+
     const body = await request.json();
     const { fullName, companyName, email, message } = body;
 
     const data = await resend.emails.send({
-      // Branding tetap pakai nama PT, tapi alamat wajib onboarding@resend.dev
       from: 'PT. Wartiwan Industri Nusantara <onboarding@resend.dev>',
-      // Ganti dengan email yang kamu gunakan untuk login di dashboard Resend
       to: ['wartiwanindustrial@gmail.com'],
       subject: `Inquiry Partner: ${companyName}`,
-      replyTo: email, // Memudahkan admin balas langsung ke email pengirim
+      replyTo: email,
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background-color: #0a0a0a; padding: 30px; text-align: center;">
