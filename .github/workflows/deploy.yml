@@ -13,16 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Generate .env.production
+      - name: Generate .env
         run: |
-          echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> .env.production
+          echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> .env
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build and Push Docker image
         run: |
-          docker build --build-arg ENV_FILE=.env.production -t ${{ secrets.DOCKER_USERNAME }}/manufacture-apps-vendor:latest .
+          docker build --build-arg ENV_FILE=.env -t ${{ secrets.DOCKER_USERNAME }}/manufacture-apps-vendor:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/manufacture-apps-vendor:latest
 
       - name: Copy K8s Manifest to Server
