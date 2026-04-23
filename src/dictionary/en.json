@@ -132,7 +132,8 @@
     "kicker": "Latest Insights",
     "title": "Our Latest",
     "titleHighlight": "Post",
-    "readMore": "Read Full Story"
+    "readMore": "Read Full Story",
+    "backToHome": "Back to Home"
   },
   "Contact": {
     "kicker": "GET IN TOUCH",
