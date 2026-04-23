@@ -1,16 +1,15 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider'; // Import hook
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Rocket, Target } from 'lucide-react';
 import { useRef } from 'react';
 import visi from '../../../public/assets/visi/visi.jpg';
-import SafeImage from '../atom/ImageOptimize';
-import InformationCard from '../atom/InformationCard';
-import { Typography } from '../ui/Typography';
+import SafeImage from '@/components/atom/ImageOptimize';
+import InformationCard from '@/components/atom/InformationCard';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function VissionMissionSection() {
-  const dict = useDict(); // Ambil dictionary
+export default function VissionMissionSection({ dict }: { dict: Dictionary }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -99,3 +98,4 @@ export default function VissionMissionSection() {
     </section>
   );
 }
+

@@ -1,16 +1,16 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider';
 import FooterSection from '../organism/FooterSection';
 import NavbarComponent from '../ui/Navbar';
+import type { Dictionary } from '@/lib/dictionary';
 
 export default function LayoutTemplates({
   children,
+  dict,
 }: {
   children: React.ReactNode;
+  dict: Dictionary;
 }) {
-  const dict = useDict();
-
   const navigationMenus = [
     { key: 'visi-misi', title: dict.Navbar.menu.vision, route: '#vission' },
     { key: 'product', title: dict.Navbar.menu.product, route: '#product' },
@@ -31,9 +31,13 @@ export default function LayoutTemplates({
 
   return (
     <section className="w-full">
-      <NavbarComponent menus={navigationMenus} contactPerson="081220709584" />
+      <NavbarComponent
+        menus={navigationMenus}
+        contactPerson="081220709584"
+        dict={dict}
+      />
       <section>{children}</section>
-      <FooterSection />
+      <FooterSection dict={dict} />
     </section>
   );
 }

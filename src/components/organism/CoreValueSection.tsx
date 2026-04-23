@@ -1,11 +1,7 @@
-'use client';
-
-import { useDict } from '@/components/providers/DictionaryProvider'; // Import hook
 import { Marquee } from '@/components/ui/marquee';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function CoreValueSection() {
-  const dict = useDict(); // Ambil dictionary
-
+export default function CoreValueSection({ dict }: { dict: Dictionary }) {
   return (
     <section className="relative -mb-[1px] w-full overflow-hidden border-none bg-slate-950 py-8 outline-none">
       <div className="absolute top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />

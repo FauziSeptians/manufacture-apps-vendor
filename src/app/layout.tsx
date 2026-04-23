@@ -7,6 +7,7 @@ import { classNames } from '@/utils/classNames';
 import { HeroUIProvider } from '@heroui/system';
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.wartiwanindustri.com/'),
@@ -30,8 +31,10 @@ export const metadata: Metadata = {
     'Wartiwan Industri Nusantara',
     'Wartiwan Industrial',
     'Wartiwan Industri',
+    'Wartiwan Industri Nusantara Tas',
+    'Tas Custom Bandung',
+    'Konveksi Tas Terbaik',
   ],
-  // 1. Tambahkan Robots untuk memastikan Google mengindeks halaman ini
   robots: {
     index: true,
     follow: true,
@@ -46,7 +49,6 @@ export const metadata: Metadata = {
   verification: {
     google: '7182l0rzGamHxCiQcAhUU1dXF6KMBDy0eDoOT7sfMRA',
   },
-  // 2. Perkuat OpenGraph untuk Rich Snippets
   openGraph: {
     type: 'website',
     url: 'https://www.wartiwanindustri.com/',
@@ -68,9 +70,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PT. Wartiwan Industri Nusantara | Pabrik Tas Berkualitas',
     description: 'Expertise in Bag Manufacturing & Supply Chain since 2001.',
-    images: ['/assets/hero.jpeg'], // Pastikan path image konsisten
+    images: ['/assets/hero.jpeg'],
   },
-  // 3. Tambahkan Category dan Alternates
   category: 'manufacturing',
   alternates: {
     canonical: 'https://www.wartiwanindustri.com/',
@@ -87,13 +88,48 @@ export default async function RootLayout({
 
   const dict = await getDictionary(locale);
 
+  // JSON-LD for SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'PT. Wartiwan Industri Nusantara',
+    alternateName: 'Wartiwan Industri',
+    url: 'https://www.wartiwanindustri.com/',
+    logo: 'https://www.wartiwanindustri.com/assets/logo.png',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+62-XXX-XXXX-XXXX',
+      contactType: 'customer service',
+      areaServed: 'ID',
+      availableLanguage: ['Indonesian', 'English'],
+    },
+    sameAs: [
+      'https://www.instagram.com/wartiwanindustri/',
+      'https://www.linkedin.com/company/pt-wartiwan-industri-nusantara/',
+    ],
+    description: metadata.description,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Ganti dengan alamat lengkap',
+      addressLocality: 'Bandung',
+      addressRegion: 'Jawa Barat',
+      postalCode: 'XXXXX',
+      addressCountry: 'ID',
+    },
+  };
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={classNames('antialiased', 'font-custom')}>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <HeroUIProvider>
           <ReactQueryProvider>
             <DictionaryProvider>
-              <LayoutTemplates>{children}</LayoutTemplates>
+              <LayoutTemplates dict={dict}>{children}</LayoutTemplates>
             </DictionaryProvider>
           </ReactQueryProvider>
         </HeroUIProvider>

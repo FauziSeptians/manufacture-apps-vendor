@@ -2,12 +2,11 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import * as React from 'react';
-import ImageOptimize from '../atom/ImageOptimize';
-import { useDict } from '../providers/DictionaryProvider';
-import { Typography } from '../ui/Typography';
+import ImageOptimize from '@/components/atom/ImageOptimize';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function HeroSection() {
-  const dict = useDict(); // Panggil dictionary
+export default function HeroSection({ dict }: { dict: Dictionary }) {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   // Data Stats sekarang mengambil label dari dictionary
@@ -23,7 +22,6 @@ export default function HeroSection() {
     offset: ['start start', 'end end'],
   });
 
-  // ... (Animasi Framer Motion tetap sama) ...
   const textOpacity = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 1, 0]);
   const textScale = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 1, 0.8]);
   const ornamentOpacity = useTransform(
@@ -168,3 +166,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

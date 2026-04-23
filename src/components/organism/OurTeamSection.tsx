@@ -1,16 +1,12 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider'; // Import hook
 import { TEAM_DATA } from '@/data/team';
 import { motion } from 'framer-motion';
-import CardPerson from '../atom/CardPerson';
-import { Typography } from '../ui/Typography';
+import CardPerson from '@/components/atom/CardPerson';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function OurTeamSection() {
-  const dict = useDict();
-  // Asumsi locale diambil dari context/cookie
-  const locale = 'id';
-
+export default function OurTeamSection({ dict }: { dict: Dictionary }) {
   return (
     <section className="flex w-full flex-col gap-16 bg-white py-24" id="team">
       {/* Header Section */}
@@ -65,3 +61,4 @@ export default function OurTeamSection() {
     </section>
   );
 }
+

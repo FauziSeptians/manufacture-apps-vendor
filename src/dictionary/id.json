@@ -159,7 +159,19 @@
     },
     "successTitle": "PESAN TERKIRIM!",
     "success": "Terima kasih! Pesan Anda telah kami terima. Tim kami akan segera menghubungi Anda melalui email dalam 1x24 jam.",
-    "closeButton": "TUTUP"
+    "closeButton": "TUTUP",
+    "office": {
+      "label": "KANTOR PUSAT",
+      "address": "Jl. K.H. Ahmad Dahlan No.38, Bandung, Indonesia"
+    },
+    "phone": {
+      "label": "TELEPON",
+      "number": "+62 812-2070-9584"
+    },
+    "email": {
+      "label": "EMAIL",
+      "address": "info@wartiwan.id"
+    }
   },
   "facility": {
     "header": {

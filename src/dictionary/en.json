@@ -159,7 +159,19 @@
     },
     "successTitle": "MESSAGE SENT!",
     "success": "Thank you! We have received your message. Our team will contact you via email within 1x24 hours.",
-    "closeButton": "CLOSE"
+    "closeButton": "CLOSE",
+    "office": {
+      "label": "HEADQUARTERS",
+      "address": "Jl. K.H. Ahmad Dahlan No.38, Bandung, Indonesia"
+    },
+    "phone": {
+      "label": "PHONE",
+      "number": "+62 812-2070-9584"
+    },
+    "email": {
+      "label": "EMAIL",
+      "address": "info@wartiwan.id"
+    }
   },
   "facility": {
     "header": {

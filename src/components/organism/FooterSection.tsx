@@ -1,11 +1,10 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider';
 import { Copyright, Instagram, Linkedin, Music2, Phone } from 'lucide-react';
-import { Typography } from '../ui/Typography';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function FooterSection() {
-  const dict = useDict();
+export default function FooterSection({ dict }: { dict: Dictionary }) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -97,3 +96,4 @@ export default function FooterSection() {
     </footer>
   );
 }
+

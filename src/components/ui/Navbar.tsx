@@ -1,10 +1,9 @@
 'use client';
 
 import {
-  useDict,
   useLocale,
   useSetLocale,
-} from '@/components/providers/DictionaryProvider';
+} from '@/components/providers/DictionaryClientProvider';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -13,6 +12,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import logo from '../../../public/assets/logo/logo-wartiwan.png';
 import ImageOptimize from '../atom/ImageOptimize';
+import type { Dictionary } from '@/lib/dictionary';
 
 export const Logo = () => (
   <ImageOptimize
@@ -27,11 +27,12 @@ export const Logo = () => (
 export default function NavbarComponent({
   menus,
   contactPerson,
+  dict,
 }: {
   menus: { key: string; title: string; route: string }[];
   contactPerson: string;
+  dict: Dictionary;
 }) {
-  const dict = useDict();
   const setLocale = useSetLocale();
   const currentLocale = useLocale();
 

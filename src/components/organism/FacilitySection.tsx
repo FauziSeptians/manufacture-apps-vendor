@@ -2,13 +2,11 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import SafeImage from '../atom/ImageOptimize';
-import { useDict } from '../providers/DictionaryProvider';
-import { Typography } from '../ui/Typography';
+import SafeImage from '@/components/atom/ImageOptimize';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-const FacilitySection = () => {
-  const dict = useDict();
-
+const FacilitySection = ({ dict }: { dict: Dictionary }) => {
   const facilityData = [
     {
       id: 'embroidery',
@@ -187,3 +185,4 @@ const FacilitySection = () => {
 };
 
 export default FacilitySection;
+

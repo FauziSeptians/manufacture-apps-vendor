@@ -1,6 +1,5 @@
 'use client';
 
-import { useDict, useLocale } from '@/components/providers/DictionaryProvider';
 import {
   Dialog,
   DialogContent,
@@ -14,21 +13,25 @@ import { classNames } from '@/utils/classNames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PackageOpen } from 'lucide-react';
 import { useState } from 'react';
-import SafeImage from '../atom/ImageOptimize';
-import { Card, CardContent } from '../ui/card';
+import SafeImage from '@/components/atom/ImageOptimize';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '../ui/carousel';
-import { Typography } from '../ui/Typography';
+} from '@/components/ui/carousel';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary, Locale } from '@/lib/dictionary';
 
-export default function ProductSection() {
-  const dict = useDict();
-  const locale = useLocale();
-
+export default function ProductSection({
+  dict,
+  locale,
+}: {
+  dict: Dictionary;
+  locale: Locale;
+}) {
   const [tab, setTab] = useState('backpack');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -181,7 +184,7 @@ export default function ProductSection() {
               {selectedProduct && (
                 <SafeImage
                   src={selectedProduct.url}
-                  alt={selectedProduct.title[locale]}
+                  alt={selectedProduct.title}
                   className="h-full w-full object-cover"
                   width={800}
                   height={1000}
@@ -194,7 +197,7 @@ export default function ProductSection() {
                   {selectedProduct?.category} Series
                 </span>
                 <DialogTitle className="text-3xl font-bold text-slate-900">
-                  {selectedProduct?.title[locale]}
+                  {selectedProduct?.title}
                 </DialogTitle>
                 <div className="my-4 h-1 w-12 bg-amber-500" />
                 <DialogDescription className="mt-4 text-base leading-relaxed text-slate-600">
@@ -218,3 +221,4 @@ export default function ProductSection() {
     </section>
   );
 }
+

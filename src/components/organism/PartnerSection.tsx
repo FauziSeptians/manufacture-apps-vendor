@@ -1,15 +1,13 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider'; // Import hook
 import { Card, CardContent } from '@/components/ui/card';
 import { PARTNERS } from '@/data/partners';
 import { motion } from 'framer-motion';
-import ImageOptimize from '../atom/ImageOptimize';
-import { Typography } from '../ui/Typography';
+import ImageOptimize from '@/components/atom/ImageOptimize';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function PartnerSection() {
-  const dict = useDict(); // Ambil dictionary
-
+export default function PartnerSection({ dict }: { dict: Dictionary }) {
   return (
     <section className="bg-background py-24" id="partner">
       <div className="container mx-auto px-6">
@@ -72,3 +70,4 @@ export default function PartnerSection() {
     </section>
   );
 }
+

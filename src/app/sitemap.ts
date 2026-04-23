@@ -1,19 +1,11 @@
-// src/app/sitemap.ts
 import { MetadataRoute } from 'next';
+import { POSTS } from '@/data/post';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.wartiwanindustri.com';
 
-  // Daftar ID berita kamu (Sesuai slug yang kamu gunakan)
-  const newsIds = [
-    'perjalanan-bersama-3second',
-    'kolaborasi-bersama-mills',
-    'tantangan-masa-pandemi',
-  ];
-
-  // Map berita ke format sitemap
-  const newsRoutes = newsIds.map((id) => ({
-    url: `${baseUrl}/news/${id}`,
+  const newsRoutes = POSTS.map((post) => ({
+    url: `${baseUrl}/news/${post.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,

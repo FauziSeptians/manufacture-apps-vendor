@@ -1,6 +1,5 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider';
 import {
   Card,
   CardContent,
@@ -12,8 +11,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Typography } from '../ui/Typography';
-import { Badge } from '../ui/badge';
+import { Typography } from '@/components/ui/Typography';
+import { Badge } from '@/components/ui/badge';
 import {
   Pagination,
   PaginationContent,
@@ -21,12 +20,12 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from '../ui/pagination';
+} from '@/components/ui/pagination';
+import type { Dictionary } from '@/lib/dictionary';
 
 const POSTS_PER_PAGE = 2;
 
-export default function LatestPostSection() {
-  const dict = useDict(); // Ambil data dictionary
+export default function LatestPostSection({ dict }: { dict: Dictionary }) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(POSTS.length / POSTS_PER_PAGE);
@@ -167,3 +166,4 @@ export default function LatestPostSection() {
     </section>
   );
 }
+

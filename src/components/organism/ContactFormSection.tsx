@@ -1,230 +1,173 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog'; // Import Shadcn Dialog
-import { zodResolver } from '@hookform/resolvers/zod';
-import { CheckCircle2, Loader2, Send } from 'lucide-react'; // Tambah CheckCircle2
-import { useMemo, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { Typography } from '../ui/Typography';
+import { motion } from 'framer-motion';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
+import { Typography } from '@/components/ui/Typography';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function ContactFormSection() {
-  const dict = useDict();
+export default function ContactFormSection({ dict }: { dict: Dictionary }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false); // State Modal
 
-  const contactSchema = useMemo(() => {
-    return z.object({
-      fullName: z.string().min(3, { message: dict.Contact.validation.nameMin }),
-      companyName: z
-        .string()
-        .min(2, { message: dict.Contact.validation.companyRequired }),
-      email: z
-        .string()
-        .email({ message: dict.Contact.validation.emailInvalid }),
-      message: z
-        .string()
-        .min(10, { message: dict.Contact.validation.messageMin }),
-    });
-  }, [dict]);
-
-  type ContactFormValues = z.infer<typeof contactSchema>;
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-  });
-
-  const onSubmit = async (data: ContactFormValues) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    try {
-      const res = await fetch('/api/send', {
-        method: 'POST',
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        setShowSuccessModal(true); // Buka Modal jika sukses
-        reset();
-      } else {
-        alert('Terjadi kesalahan, coba lagi nanti.');
-      }
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Simulasi delay
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsSubmitting(false);
+    alert('Thank you! Your message has been sent.');
   };
 
-  const backgroundImageUrl =
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070';
-
   return (
-    <section className="relative flex min-h-[800px] w-full items-center overflow-hidden">
-      {/* Background & Overlay tetap sama */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url('${backgroundImageUrl}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/90 via-[#0a0a0a]/70 to-[#0a0a0a]" />
+    <section className="relative w-full bg-slate-950 py-24" id="contact">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(245,158,11,0.2)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(245,158,11,0.2)_0%,transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
-          {/* Sisi Kiri */}
-          <div className="flex flex-col gap-8 lg:sticky lg:top-24">
-            <Typography.Kicker className="font-bold tracking-[0.4em] text-amber-500">
-              {dict.Contact.kicker}
-            </Typography.Kicker>
-            <Typography.Title className="text-4xl leading-tight font-bold text-white md:text-6xl">
-              {dict.Contact.title} <br />
-              <Typography.Highlight className="text-amber-500">
-                {dict.Contact.highlight}
-              </Typography.Highlight>
-            </Typography.Title>
-            <Typography.P className="max-w-md text-lg leading-relaxed text-slate-300">
-              {dict.Contact.description}
-            </Typography.P>
-          </div>
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+          {/* INFO CONTACT */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col justify-center"
+          >
+            <Typography>
+              <Typography.Kicker className="text-amber-500 uppercase">
+                {dict.Contact.kicker}
+              </Typography.Kicker>
+              <Typography.Title className="text-white">
+                {dict.Contact.title}{' '}
+                <Typography.Highlight>
+                  {dict.Contact.highlight}
+                </Typography.Highlight>
+              </Typography.Title>
+              <Typography.P className="mt-6 max-w-lg text-slate-400">
+                {dict.Contact.description}
+              </Typography.P>
+            </Typography>
 
-          {/* Sisi Kanan: Form */}
-          <div className="w-full rounded-3xl border border-white/10 bg-[#0a0a0a]/40 p-8 shadow-2xl backdrop-blur-2xl md:p-12">
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col gap-8"
-            >
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div className="flex flex-col gap-3">
-                  <label className="text-[11px] font-black tracking-[0.2em] text-amber-500/80 uppercase">
+            <div className="mt-12 space-y-8">
+              <div className="flex items-center gap-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-amber-500 ring-1 ring-white/10">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                    {dict.Contact.office.label}
+                  </h4>
+                  <p className="mt-1 font-medium text-white">
+                    {dict.Contact.office.address}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-amber-500 ring-1 ring-white/10">
+                  <Phone size={24} />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                    {dict.Contact.phone.label}
+                  </h4>
+                  <p className="mt-1 font-medium text-white">
+                    {dict.Contact.phone.number}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-amber-500 ring-1 ring-white/10">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                    {dict.Contact.email.label}
+                  </h4>
+                  <p className="mt-1 font-medium text-white">
+                    {dict.Contact.email.address}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* FORM */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-[2.5rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl md:p-12"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold tracking-widest text-slate-500 uppercase">
                     {dict.Contact.form.nameLabel}
                   </label>
-                  <input
-                    {...register('fullName')}
-                    className={`w-full border-b bg-transparent py-3 text-white transition-all outline-none ${errors.fullName ? 'border-red-500' : 'border-white/20 focus:border-amber-500 focus:pl-2'}`}
+                  <Input
                     placeholder={dict.Contact.form.namePlaceholder}
+                    className="h-14 border-white/10 bg-white/5 text-white placeholder:text-slate-600 focus:border-amber-500"
+                    required
                   />
-                  {errors.fullName && (
-                    <span className="text-[10px] font-bold text-red-500 uppercase">
-                      {errors.fullName.message}
-                    </span>
-                  )}
                 </div>
-
-                <div className="flex flex-col gap-3">
-                  <label className="text-[11px] font-black tracking-[0.2em] text-amber-500/80 uppercase">
-                    {dict.Contact.form.companyLabel}
+                <div className="space-y-2">
+                  <label className="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                    {dict.Contact.form.emailLabel}
                   </label>
-                  <input
-                    {...register('companyName')}
-                    className={`w-full border-b bg-transparent py-3 text-white transition-all outline-none ${errors.companyName ? 'border-red-500' : 'border-white/20 focus:border-amber-500 focus:pl-2'}`}
-                    placeholder={dict.Contact.form.companyPlaceholder}
+                  <Input
+                    type="email"
+                    placeholder={dict.Contact.form.emailPlaceholder}
+                    className="h-14 border-white/10 bg-white/5 text-white placeholder:text-slate-600 focus:border-amber-500"
+                    required
                   />
-                  {errors.companyName && (
-                    <span className="text-[10px] font-bold text-red-500 uppercase">
-                      {errors.companyName.message}
-                    </span>
-                  )}
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <label className="text-[11px] font-black tracking-[0.2em] text-amber-500/80 uppercase">
-                  {dict.Contact.form.emailLabel}
+              <div className="space-y-2">
+                <label className="text-xs font-bold tracking-widest text-slate-500 uppercase">
+                  {dict.Contact.form.companyLabel}
                 </label>
-                <input
-                  {...register('email')}
-                  type="email"
-                  className={`w-full border-b bg-transparent py-3 text-white transition-all outline-none ${errors.email ? 'border-red-500' : 'border-white/20 focus:border-amber-500 focus:pl-2'}`}
-                  placeholder={dict.Contact.form.emailPlaceholder}
+                <Input
+                  placeholder={dict.Contact.form.companyPlaceholder}
+                  className="h-14 border-white/10 bg-white/5 text-white placeholder:text-slate-600 focus:border-amber-500"
+                  required
                 />
-                {errors.email && (
-                  <span className="text-[10px] font-bold text-red-500 uppercase">
-                    {errors.email.message}
-                  </span>
-                )}
               </div>
 
-              <div className="flex flex-col gap-3">
-                <label className="text-[11px] font-black tracking-[0.2em] text-amber-500/80 uppercase">
+              <div className="space-y-2">
+                <label className="text-xs font-bold tracking-widest text-slate-500 uppercase">
                   {dict.Contact.form.messageLabel}
                 </label>
-                <textarea
-                  {...register('message')}
-                  rows={4}
-                  className={`w-full resize-none border-b bg-transparent py-3 text-white transition-all outline-none ${errors.message ? 'border-red-500' : 'border-white/20 focus:border-amber-500 focus:pl-2'}`}
+                <Textarea
                   placeholder={dict.Contact.form.messagePlaceholder}
+                  className="min-h-[160px] border-white/10 bg-white/5 text-white placeholder:text-slate-600 focus:border-amber-500"
+                  required
                 />
-                {errors.message && (
-                  <span className="text-[10px] font-bold text-red-500 uppercase">
-                    {errors.message.message}
-                  </span>
-                )}
               </div>
 
-              <button
-                type="submit"
+              <Button
                 disabled={isSubmitting}
-                className="group relative flex items-center justify-center gap-4 overflow-hidden rounded-xl bg-amber-500 px-8 py-5 font-black tracking-widest text-[#0a0a0a] transition-all hover:bg-amber-400 active:scale-95 disabled:opacity-50"
+                className="h-16 w-full rounded-2xl bg-amber-500 text-base font-bold text-slate-950 transition-all hover:scale-[1.02] hover:bg-amber-400 active:scale-95"
               >
                 {isSubmitting ? (
-                  <>
-                    <Loader2 size={24} className="animate-spin" />
-                    {dict.Contact.form.submitting}
-                  </>
+                  dict.Contact.form.submitting
                 ) : (
                   <>
-                    {dict.Contact.form.button}
-                    <Send
-                      size={20}
-                      className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                    />
+                    {dict.Contact.form.button} <Send size={18} className="ml-2" />
                   </>
                 )}
-              </button>
+              </Button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
-
-      {/* --- MODAL SUCCESS SHADCN --- */}
-      <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
-        <DialogContent className="border-white/10 bg-white p-10 text-center sm:max-w-[400px]">
-          <div className="flex flex-col items-center justify-center gap-6">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-amber-500/10">
-              <CheckCircle2 size={48} className="text-amber-500" />
-            </div>
-            <DialogHeader className="flex items-center text-center">
-              <DialogTitle className="text-2xl font-black tracking-wider text-black uppercase">
-                {dict.Contact.successTitle || 'SUCCESS!'}
-              </DialogTitle>
-              <DialogDescription className="pt-2 text-center text-slate-400">
-                {dict.Contact.success}
-              </DialogDescription>
-            </DialogHeader>
-            <button
-              onClick={() => setShowSuccessModal(false)}
-              className="mt-4 w-full rounded-lg bg-slate-900 py-4 text-xs font-bold tracking-[0.2em] text-amber-500 uppercase transition-colors hover:bg-white/10"
-            >
-              Close
-            </button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
+

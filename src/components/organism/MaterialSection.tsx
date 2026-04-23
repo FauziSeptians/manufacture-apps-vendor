@@ -1,14 +1,13 @@
 'use client';
 
-import { useDict } from '@/components/providers/DictionaryProvider';
 import { MATERIALS } from '@/data/materials';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import ImageOptimize from '../atom/ImageOptimize';
-import { Typography } from '../ui/Typography';
+import ImageOptimize from '@/components/atom/ImageOptimize';
+import { Typography } from '@/components/ui/Typography';
+import type { Dictionary } from '@/lib/dictionary';
 
-export default function MaterialSection() {
-  const dict = useDict();
+export default function MaterialSection({ dict }: { dict: Dictionary }) {
   const [indices, setIndices] = useState([0, 1, 2, 3]);
 
   useEffect(() => {
@@ -110,3 +109,4 @@ export default function MaterialSection() {
     </section>
   );
 }
+
