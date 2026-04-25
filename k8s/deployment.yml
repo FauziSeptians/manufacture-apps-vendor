@@ -19,12 +19,16 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "250m"
+              memory: '64Mi' # Sangat hemat untuk landing page
+              cpu: '50m' # Hanya gunakan 5% dari 1 core CPU
             limits:
-              memory: "512Mi"
-              cpu: "500m"
+              memory: '128Mi' # Batas maksimal agar tidak makan jatah app lain
+              cpu: '100m' # Batas maksimal tenaga CPU
           imagePullPolicy: Always
+          env:
+            # Trik agar Node.js melakukan pembersihan RAM lebih awal
+            - name: NODE_OPTIONS
+              value: '--max-old-space-size=90'
 ---
 apiVersion: v1
 kind: Service
