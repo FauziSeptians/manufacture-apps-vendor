@@ -44,8 +44,6 @@ export default function ImageOptimize({
       quality={90}
       className={classNames(className, 'cursor-pointer')}
       onError={() => setHasError(true)}
-      placeholder="blur"
-      blurDataURL="/blur-placeholder.png"
       onClick={onClick}
       {...rest}
     />
