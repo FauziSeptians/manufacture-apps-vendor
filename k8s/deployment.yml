@@ -32,6 +32,9 @@ spec:
               value: '--max-old-space-size=384'
             - name: NODE_ENV
               value: 'production'
+          envFrom:
+            - secretRef:
+                name: manufacture-app-secrets
           resources:
             requests:
               memory: '256Mi'
