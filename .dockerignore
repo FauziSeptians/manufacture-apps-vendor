@@ -1,6 +1,52 @@
-node_modules
-.git
-.next
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+build/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# env files (exclude local env files, secrets)
+.env
+.env.local
+.env.development
+.env.test
+.env.production.local
+.env.*.local
+
+# vercel
+.vercel/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# git and github
+.git/
+.github/
+
+# IDE and editors
+.vscode/
+.idea/
+
+# Docker
 Dockerfile
 .dockerignore
-*.log
+k8s/
+README.md

@@ -32,8 +32,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
-          source: "k8s/deployment.yml"
-          target: "/home/${{ secrets.SERVER_USER }}/deployments/manufacture-apps-vendor"
+          source: 'k8s/deployment.yml'
+          target: '/home/${{ secrets.SERVER_USER }}/deployments/manufacture-apps-vendor'
 
       - name: Deploy to Minikube via SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -44,5 +44,6 @@ jobs:
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
           script: |
             cd /home/${{ secrets.SERVER_USER }}/deployments/manufacture-apps-vendor
+            minikube status || minikube start --driver=docker --cpus=2 --memory=3600mb
             kubectl apply -f k8s/deployment.yml
             kubectl rollout restart deployment manufacture-apps-vendor
