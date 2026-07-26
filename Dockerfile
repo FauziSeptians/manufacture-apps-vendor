@@ -16,6 +16,13 @@ COPY . .
 # Build aplikasi Next.js
 RUN npm run build
 
+# Buat user non-root untuk keamanan
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs && \
+    chown -R nextjs:nodejs /app
+
+USER nextjs
+
 # Expose port default Next.js
 EXPOSE 3000
 
