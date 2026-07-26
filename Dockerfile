@@ -21,7 +21,7 @@ RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs && \
     chown -R nextjs:nodejs /app
 
-USER nextjs
+USER 1001
 
 # Expose port default Next.js
 EXPOSE 3000
