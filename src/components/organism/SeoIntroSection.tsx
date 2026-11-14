@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { Typography } from '@/components/ui/Typography';
+import { PRODUCT_PAGES } from '@/data/productPages';
 import type { Dictionary } from '@/lib/dictionary';
 
 /**
@@ -35,6 +37,22 @@ export default function SeoIntroSection({ dict }: { dict: Dictionary }) {
           <ul className="list-disc space-y-2 pl-5 text-slate-600">
             {seo.services.items.map((item) => (
               <li key={item}>{item}</li>
+            ))}
+          </ul>
+
+          <h3 className="mt-4 text-lg font-bold text-slate-900">
+            {seo.catalogTitle}
+          </h3>
+          <ul className="flex flex-wrap gap-3">
+            {PRODUCT_PAGES.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/produk/${p.slug}`}
+                  className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-700 hover:border-amber-500 hover:text-amber-600"
+                >
+                  {p.name}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

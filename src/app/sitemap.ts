@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { POSTS } from '@/data/post';
+import { PRODUCT_PAGES } from '@/data/productPages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.wartiwanindustri.com';
@@ -18,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     POSTS[0].publishedAt
   );
 
+  const productRoutes = PRODUCT_PAGES.map((p) => ({
+    url: `${baseUrl}/produk/${p.slug}`,
+    lastModified: new Date(latestPost),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -25,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 1,
     },
+    ...productRoutes,
     ...newsRoutes,
   ];
 }
