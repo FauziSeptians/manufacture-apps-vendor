@@ -1,9 +1,9 @@
 {
   "Hero": {
-    "kicker": "Industrial Excellence",
+    "kicker": "Bag Factory Bandung · OEM & B2B",
     "title1": "Wartiwan",
     "title2": "Nusantara Industry.",
-    "description": "A strategic bag manufacturing partner integrating two decades of experience with modern production systems.",
+    "description": "B2B & OEM bag manufacturer in Bandung, Indonesia, serving fashion brands. Two decades of experience combined with modern production systems.",
     "scroll": "Scroll"
   },
   "Stats": {
@@ -43,6 +43,45 @@
       "highlight": "Innovation & Consistent Quality",
       "description": "Committed to empowering local artisans, utilizing modern technology, and strict quality control standards to ensure every product has high competitive value and services."
     }
+  },
+  "Seo": {
+    "kicker": "About Our Services",
+    "title": "Bag Factory in Bandung for",
+    "titleHighlight": "Fashion Brands & Merchandise",
+    "intro": "PT. Wartiwan Industri Nusantara is a B2B & OEM bag manufacturer based in Cibiru, Bandung City, Indonesia. We produce custom bags for fashion brands, sports organizations, and corporate merchandise, from sample development to mass production.",
+    "services": {
+      "title": "Production Services",
+      "items": [
+        "Backpacks, tote bags, sling bags, waistbags, travel bags, shoes bags, totepacks, and pouches",
+        "Custom bag manufacturing to your brand's design and specifications (OEM)",
+        "In-house embroidery and screen printing for logos",
+        "Cordura materials with YKK and acetal hardware",
+        "Minimum order 50 pcs with capacity above 10,000 units per month"
+      ]
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faq": [
+      {
+        "q": "Where is the Wartiwan Industri Nusantara bag factory located?",
+        "a": "Our head office and production facility are at Jl. Mekarjati RT 03 RW 05, Pasir Biru, Cibiru, Bandung 40615, Indonesia."
+      },
+      {
+        "q": "What is the minimum order for custom bags?",
+        "a": "Our minimum order is 50 pcs per article. For large-scale needs, our production capacity exceeds 10,000 units per month."
+      },
+      {
+        "q": "What types of bags can you produce?",
+        "a": "We produce backpacks, waistbags, totepacks, travel bags, sling bags, shoes bags, tote bags, and pouches, with custom branding options such as embroidery and screen printing."
+      },
+      {
+        "q": "Which brands have worked with Wartiwan?",
+        "a": "We have partnered with brands and companies including 3Second, Greenlight, Mills, and Tweely for Bag. Read more in our news section."
+      },
+      {
+        "q": "How do I start a production partnership?",
+        "a": "Contact our team via the contact form, WhatsApp 0812-2070-9584, or email wartiwanindustrial@gmail.com with your product specifications or partnership plan."
+      }
+    ]
   },
   "Product": {
     "kicker": "Our Premium Catalog",

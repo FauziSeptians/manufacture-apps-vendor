@@ -92,7 +92,10 @@ export default function HeroSection({ dict }: { dict: Dictionary }) {
               <Typography.Kicker className="text-amber-500">
                 {dict.Hero.kicker}
               </Typography.Kicker>
-              <Typography.Title className="text-5xl text-white md:text-7xl lg:text-8xl">
+              <Typography.Title
+                as="h1"
+                className="text-5xl text-white md:text-7xl lg:text-8xl"
+              >
                 {dict.Hero.title1} <br />
                 <Typography.Highlight>{dict.Hero.title2}</Typography.Highlight>
               </Typography.Title>
@@ -121,7 +124,7 @@ export default function HeroSection({ dict }: { dict: Dictionary }) {
             <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-white/10">
               <ImageOptimize
                 src="https://static.vecteezy.com/system/resources/thumbnails/031/599/225/small_2x/of-inside-textile-factory-line-production-view-ai-generative-photo.jpg"
-                alt="Industrial Factory"
+                alt="Lini produksi tas di pabrik Wartiwan Industri Nusantara, Bandung"
                 width={1920}
                 height={1080}
                 className="h-full w-full object-cover"

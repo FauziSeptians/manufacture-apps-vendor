@@ -1,9 +1,9 @@
 {
   "Hero": {
-    "kicker": "Industrial Excellence",
+    "kicker": "Pabrik Tas Bandung · OEM & B2B",
     "title1": "Wartiwan",
     "title2": "Industri Nusantara.",
-    "description": "Mitra manufaktur tas strategis yang mengintegrasikan pengalaman dua dekade dengan sistem produksi modern.",
+    "description": "Pabrik tas dan konveksi tas B2B & OEM di Bandung untuk brand fashion. Pengalaman dua dekade dipadukan dengan sistem produksi modern.",
     "scroll": "Gulir"
   },
   "Stats": {
@@ -43,6 +43,45 @@
       "highlight": "Inovasi & Kualitas Konsisten",
       "description": "Berkomitmen pada pemberdayaan pengrajin lokal, penggunaan teknologi modern, dan standar kontrol kualitas yang ketat guna memastikan setiap produk memiliki nilai daya saing tinggi dan layanan yang kompetitif."
     }
+  },
+  "Seo": {
+    "kicker": "Tentang Layanan Kami",
+    "title": "Pabrik Tas Bandung untuk",
+    "titleHighlight": "Brand Fashion & Merchandise",
+    "intro": "PT. Wartiwan Industri Nusantara adalah pabrik tas dan konveksi tas B2B & OEM yang berlokasi di Cibiru, Kota Bandung. Kami memproduksi tas custom untuk brand fashion, olahraga, dan kebutuhan merchandise perusahaan, mulai dari pengembangan sampel hingga produksi massal.",
+    "services": {
+      "title": "Layanan Produksi",
+      "items": [
+        "Produksi backpack, tote bag, sling bag, waistbag, travel bag, shoes bag, totepack, dan pouch",
+        "Pembuatan tas custom sesuai desain dan spesifikasi brand (OEM)",
+        "Bordir dan sablon logo dengan fasilitas produksi sendiri",
+        "Material Cordura serta aksesoris YKK dan acetal",
+        "Minimal order 50 pcs dengan kapasitas lebih dari 10.000 unit per bulan"
+      ]
+    },
+    "faqTitle": "Pertanyaan yang Sering Diajukan",
+    "faq": [
+      {
+        "q": "Di mana lokasi pabrik tas Wartiwan Industri Nusantara?",
+        "a": "Kantor pusat dan fasilitas produksi kami berada di Jl. Mekarjati RT 03 RW 05, Pasir Biru, Kec. Cibiru, Kota Bandung 40615."
+      },
+      {
+        "q": "Berapa minimal order untuk produksi tas custom?",
+        "a": "Minimal order kami adalah 50 pcs per artikel. Untuk kebutuhan skala besar, kapasitas produksi kami lebih dari 10.000 unit per bulan."
+      },
+      {
+        "q": "Jenis tas apa saja yang bisa diproduksi?",
+        "a": "Kami memproduksi backpack, waistbag, totepack, travel bag, sling bag, shoes bag, tote bag, dan pouch, dengan opsi branding kustom seperti bordir dan sablon."
+      },
+      {
+        "q": "Brand apa saja yang pernah bekerja sama dengan Wartiwan?",
+        "a": "Kami telah bermitra dengan brand dan perusahaan seperti 3Second, Greenlight, Mills, dan Tweely for Bag. Selengkapnya dapat dibaca di bagian berita kami."
+      },
+      {
+        "q": "Bagaimana cara memulai kerja sama produksi?",
+        "a": "Hubungi tim kami melalui formulir di bagian kontak, WhatsApp 0812-2070-9584, atau email wartiwanindustrial@gmail.com dengan menyertakan spesifikasi produk atau rencana kerja sama Anda."
+      }
+    ]
   },
   "Product": {
     "kicker": "Katalog Premium Kami",

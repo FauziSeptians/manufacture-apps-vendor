@@ -120,7 +120,7 @@ export default function ProductSection({
 
                                   <SafeImage
                                     src={prod.url}
-                                    alt={prod.title}
+                                    alt={`${prod.title} - ${category} custom produksi OEM Wartiwan Industri Bandung`}
                                     className={classNames(
                                       prod?.imageClass || 'object-cover',
                                       !prod?.imageClass?.includes('object-') &&
@@ -184,7 +184,7 @@ export default function ProductSection({
               {selectedProduct && (
                 <SafeImage
                   src={selectedProduct.url}
-                  alt={selectedProduct.title}
+                  alt={`${selectedProduct.title} - ${selectedProduct.category} custom produksi OEM Wartiwan Industri Bandung`}
                   className="h-full w-full object-cover"
                   width={800}
                   height={1000}

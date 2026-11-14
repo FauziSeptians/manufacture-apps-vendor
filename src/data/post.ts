@@ -1,6 +1,7 @@
 export const POSTS = [
   {
     id: 1,
+    publishedAt: '2026-02-12',
     category: 'Partnership',
     date: '12 Feb 2026',
     author: 'Admin Wartiwan',
@@ -16,6 +17,7 @@ export const POSTS = [
   },
   {
     id: 2,
+    publishedAt: '2026-03-05',
     category: 'Sports',
     date: '05 Mar 2026',
     author: 'Admin Wartiwan',
@@ -31,6 +33,7 @@ export const POSTS = [
   },
   {
     id: 3,
+    publishedAt: '2026-01-20',
     category: 'Company Story',
     date: '20 Jan 2026',
     author: 'Admin Wartiwan',
@@ -46,6 +49,7 @@ export const POSTS = [
   },
   {
     id: 4,
+    publishedAt: '2026-03-16',
     category: 'Partnership',
     date: '16 Mar 2026',
     author: 'Admin Wartiwan',

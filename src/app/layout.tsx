@@ -9,15 +9,17 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
 
+const SITE_DESCRIPTION =
+  'Pabrik tas di Bandung untuk brand fashion & merchandise. Konveksi tas B2B & OEM: backpack, tote bag, sling bag, waistbag. Minimal order 50 pcs, kapasitas 10.000+ unit/bulan. Produksi custom bordir & sablon.';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.wartiwanindustri.com/'),
   title: {
     default:
-      'PT. Wartiwan Industri Nusantara | Manufaktur Tas & Partner Brand Fashion',
-    template: '%s | Wartiwan Industri',
+      'Pabrik Tas Bandung | Konveksi Tas B2B & OEM - Wartiwan Industri Nusantara',
+    template: '%s | Wartiwan Industri Nusantara',
   },
-  description:
-    'Pabrik manufaktur tas spesialis B2B & OEM sejak 2001. Kapasitas 10.000 unit/bulan. Partner resmi 3Second, Greenlight, dan Mills. Kualitas ekspor dengan pengerjaan presisi.',
+  description: SITE_DESCRIPTION,
   keywords: [
     'Pabrik Tas Bandung',
     'Vendor Tas 3Second',
@@ -52,9 +54,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.wartiwanindustri.com/',
-    title: 'PT. Wartiwan Industri Nusantara - Industrial Excellence since 2001',
+    title: 'Pabrik Tas Bandung | Konveksi Tas B2B & OEM - Wartiwan Industri',
     description:
-      'Penyedia solusi produksi tas skala besar (OEM/B2B) dengan standar internasional. Kapasitas 10rb+ unit per bulan.',
+      'Penyedia solusi produksi tas skala besar (OEM/B2B) untuk brand fashion. Minimal order 50 pcs, kapasitas 10rb+ unit per bulan.',
     siteName: 'Wartiwan Industri Nusantara',
     locale: 'id_ID',
     images: [
@@ -68,8 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PT. Wartiwan Industri Nusantara | Pabrik Tas Berkualitas',
-    description: 'Expertise in Bag Manufacturing & Supply Chain since 2001.',
+    title: 'Pabrik Tas Bandung | Konveksi Tas B2B & OEM - Wartiwan Industri',
+    description:
+      'Konveksi tas B2B & OEM di Bandung. Backpack, tote bag, sling bag custom dengan minimal order 50 pcs.',
     images: ['/assets/hero.jpeg'],
   },
   category: 'manufacturing',
@@ -88,34 +91,62 @@ export default async function RootLayout({
 
   const dict = await getDictionary(locale);
 
-  // JSON-LD for SEO
+  // JSON-LD for SEO (data kontak diambil dari section Hubungi Kami di website)
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'PT. Wartiwan Industri Nusantara',
-    alternateName: 'Wartiwan Industri',
-    url: 'https://www.wartiwanindustri.com/',
-    logo: 'https://www.wartiwanindustri.com/assets/logo.png',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+62-XXX-XXXX-XXXX',
-      contactType: 'customer service',
-      areaServed: 'ID',
-      availableLanguage: ['Indonesian', 'English'],
-    },
-    sameAs: [
-      'https://www.instagram.com/wartiwanindustri/',
-      'https://www.linkedin.com/company/pt-wartiwan-industri-nusantara/',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://www.wartiwanindustri.com/#website',
+        url: 'https://www.wartiwanindustri.com/',
+        name: 'Wartiwan Industri Nusantara',
+        alternateName: ['Wartiwan Industri', 'PT WIN', 'Wartiwan Industrial'],
+        inLanguage: 'id-ID',
+        publisher: { '@id': 'https://www.wartiwanindustri.com/#organization' },
+      },
+      {
+        '@type': ['Organization', 'LocalBusiness'],
+        '@id': 'https://www.wartiwanindustri.com/#organization',
+        name: 'PT. Wartiwan Industri Nusantara',
+        alternateName: 'Wartiwan Industri',
+        url: 'https://www.wartiwanindustri.com/',
+        logo: 'https://www.wartiwanindustri.com/assets/logo/logo-wartiwan.png',
+        image: 'https://www.wartiwanindustri.com/assets/hero.jpeg',
+        description: SITE_DESCRIPTION,
+        email: 'wartiwanindustrial@gmail.com',
+        telephone: '+62-812-2070-9584',
+        areaServed: 'ID',
+        knowsAbout: [
+          'Pabrik tas Bandung',
+          'Konveksi tas B2B',
+          'OEM tas custom',
+          'Backpack',
+          'Tote bag',
+          'Sling bag',
+          'Waistbag',
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+62-812-2070-9584',
+          contactType: 'sales',
+          areaServed: 'ID',
+          availableLanguage: ['Indonesian', 'English'],
+        },
+        sameAs: [
+          'https://www.instagram.com/wartiwanindustri/',
+          'https://www.tiktok.com/@wartiwanindustri',
+          'https://www.linkedin.com/company/pt-wartiwan-industri-nusantara/',
+        ],
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Jl. Mekarjati RT 03 RW 05, Pasir Biru, Kec. Cibiru',
+          addressLocality: 'Kota Bandung',
+          addressRegion: 'Jawa Barat',
+          postalCode: '40615',
+          addressCountry: 'ID',
+        },
+      },
     ],
-    description: metadata.description,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Ganti dengan alamat lengkap',
-      addressLocality: 'Bandung',
-      addressRegion: 'Jawa Barat',
-      postalCode: 'XXXXX',
-      addressCountry: 'ID',
-    },
   };
 
   return (

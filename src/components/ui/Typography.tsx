@@ -6,6 +6,11 @@ interface TypographyProps {
   className?: string;
 }
 
+interface TitleProps extends TypographyProps {
+  /** Default h2 supaya halaman hanya punya satu h1 (dipakai di hero). */
+  as?: 'h1' | 'h2' | 'h3';
+}
+
 // 1. Root Component (Container)
 const Typography = ({ children, className }: TypographyProps) => {
   return <div className={cn('flex flex-col gap-4', className)}>{children}</div>;
@@ -26,9 +31,9 @@ const Kicker = ({ children, className }: TypographyProps) => {
 };
 
 // 3. Title (Heading Utama)
-const Title = ({ children, className }: TypographyProps) => {
+const Title = ({ children, className, as: Tag = 'h2' }: TitleProps) => {
   return (
-    <h1
+    <Tag
       className={cn(
         'scroll-m-20 text-4xl leading-[1.1] font-bold tracking-tight text-slate-900 uppercase sm:text-5xl',
         'dark:text-slate-50',
@@ -36,7 +41,7 @@ const Title = ({ children, className }: TypographyProps) => {
       )}
     >
       {children}
-    </h1>
+    </Tag>
   );
 };
 

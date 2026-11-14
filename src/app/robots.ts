@@ -5,8 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/private/',
+      disallow: ['/api/', '/private/'],
     },
     sitemap: 'https://www.wartiwanindustri.com/sitemap.xml',
+    host: 'https://www.wartiwanindustri.com',
   };
 }

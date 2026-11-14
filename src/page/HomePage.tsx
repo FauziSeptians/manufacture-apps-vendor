@@ -7,6 +7,7 @@ import MaterialSection from '@/components/organism/MaterialSection';
 import OurTeamSection from '@/components/organism/OurTeamSection';
 import PartnerSection from '@/components/organism/PartnerSection';
 import ProductSection from '@/components/organism/ProductSection';
+import SeoIntroSection from '@/components/organism/SeoIntroSection';
 import VissionMissionSection from '@/components/organism/VissionMissionSection';
 import type { Dictionary, Locale } from '@/lib/dictionary';
 
@@ -22,6 +23,7 @@ export default function HomePage({
       <HeroSection dict={dict} />
       <CoreValueSection dict={dict} />
       <VissionMissionSection dict={dict} />
+      <SeoIntroSection dict={dict} />
       <ProductSection dict={dict} locale={locale} />
       <MaterialSection dict={dict} />
       <FacilitySection dict={dict} />

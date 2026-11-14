@@ -18,9 +18,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/news/${post.id}`,
+    },
     openGraph: {
+      type: 'article',
+      url: `/news/${post.id}`,
       title: post.title,
       description: post.excerpt,
+      publishedTime: post.publishedAt,
+      authors: [post.author],
       images: [post.image],
     },
     twitter: {
@@ -43,5 +50,33 @@ export default async function Page({ params }: Props) {
   const locale = (cookieStore.get('NEXT_LOCALE')?.value || 'id') as Locale;
   const dict = await getDictionary(locale);
 
-  return <NewsDetailPage id={id} dict={dict} />;
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://www.wartiwanindustri.com${post.image}`,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: { '@type': 'Organization', name: post.author },
+    publisher: {
+      '@type': 'Organization',
+      name: 'PT. Wartiwan Industri Nusantara',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.wartiwanindustri.com/assets/logo/logo-wartiwan.png',
+      },
+    },
+    mainEntityOfPage: `https://www.wartiwanindustri.com/news/${post.id}`,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <NewsDetailPage id={id} dict={dict} />
+    </>
+  );
 }
